@@ -11,8 +11,8 @@
   </ul>
 </nav>
 
-<style>
-  nav {
+<style is:global>
+  nav#navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
@@ -27,54 +27,54 @@
     transition: background 0.4s, box-shadow 0.4s;
   }
 
-  nav :global(.scrolled) {
+  nav#navbar.scrolled {
     background: rgba(245, 235, 221, 0.95);
     box-shadow: 0 4px 30px rgba(136, 101, 69, 0.06);
   }
 
-  .logo {
+  nav#navbar .logo {
     font-family: var(--serif);
     font-size: 1.7rem;
     color: var(--brown);
     letter-spacing: 0.01em;
   }
 
-  .nav-links {
+  nav#navbar .nav-links {
     display: flex;
     gap: 2.2rem;
     list-style: none;
     align-items: center;
   }
 
-  .nav-links a {
+  nav#navbar .nav-links a {
     color: var(--brown);
     text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     transition: color 0.3s;
     font-weight: 400;
   }
 
-  .nav-links a:hover { color: var(--orange); }
+  nav#navbar .nav-links a:hover { color: var(--orange); }
 
-  .nav-cta {
-    background: var(--orange) !important;
+  nav#navbar .nav-cta {
+    background: var(--orange);
     color: var(--white) !important;
-    padding: 0.6rem 1.5rem !important;
+    padding: 0.6rem 1.5rem;
     border-radius: 100px;
-    font-weight: 600 !important;
-    transition: all 0.3s !important;
+    font-weight: 600;
+    transition: all 0.3s;
   }
 
-  .nav-cta:hover {
-    background: var(--orange-dark) !important;
+  nav#navbar .nav-cta:hover {
+    background: var(--orange-dark);
     transform: translateY(-1px);
     box-shadow: 0 6px 24px rgba(255, 142, 62, 0.3);
   }
 
   @media (max-width: 640px) {
-    nav { padding: 1rem 1.5rem; }
-    .hide-mobile { display: none; }
+    nav#navbar { padding: 1rem 1.5rem; }
+    nav#navbar .hide-mobile { display: none; }
   }
 </style>

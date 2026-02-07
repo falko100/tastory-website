@@ -17,7 +17,7 @@ const { testimonials } = Astro.props;
         <div class="testimonial-card reveal">
           <p class="testimonial-quote">{t.quote}</p>
           <div class="testimonial-author">{t.author}</div>
-          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
       ))}
     </div>
@@ -73,7 +73,7 @@ const { testimonials } = Astro.props;
   }
 
   .testimonial-quote {
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.75;
     color: var(--text);
     font-style: italic;
@@ -82,14 +82,14 @@ const { testimonials } = Astro.props;
   }
 
   .testimonial-author {
-    font-size: 0.82rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--brown);
   }
 
   .testimonial-stars {
     color: var(--orange);
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-top: 0.3rem;
   }
 
