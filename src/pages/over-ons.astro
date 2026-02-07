@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = '/tastory-website';
 ---
 
 <BaseLayout title="Over ons — Tastory" description="Het verhaal van Tastory: passie voor eten en de wens om verhalen samen te brengen.">
@@ -13,36 +15,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <section class="about-mission reveal">
-    <div class="section-tag">Onze missie</div>
-    <h2 class="section-title">De perfecte match tussen restaurant en <em>gast</em></h2>
-    <p class="about-text">Tastory helpt restaurantbezoekers bij het vinden van restaurants die écht bij hun smaak en voorkeuren passen. Het platform transformeert de restaurantkeuze van giswerk naar een weloverwogen keuze door middel van representatieve, authentieke en visueel aantrekkelijke restaurantprofielen.</p>
-    <p class="about-text">Wij geloven dat de beste restaurantervaringen beginnen met de juiste verwachtingen. Daarom bieden wij een platform waarop restaurants zich eerlijk en inspirerend kunnen presenteren, terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.</p>
+    <div class="mission-grid">
+      <div class="mission-text">
+        <div class="section-tag">Onze missie</div>
+        <h2 class="section-title">De perfecte match tussen restaurant en <em>gast</em></h2>
+        <p class="about-text">Tastory helpt restaurantbezoekers bij het vinden van restaurants die écht bij hun smaak en voorkeuren passen. Het platform transformeert de restaurantkeuze van giswerk naar een weloverwogen keuze door middel van representatieve, authentieke en visueel aantrekkelijke restaurantprofielen.</p>
+        <p class="about-text">Wij geloven dat de beste restaurantervaringen beginnen met de juiste verwachtingen. Daarom bieden wij een platform waarop restaurants zich eerlijk en inspirerend kunnen presenteren, terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.</p>
+      </div>
+      <div class="mission-visual">
+        <div class="mission-card">
+          <div class="mission-stat">
+            <span class="mission-stat-number">340+</span>
+            <span class="mission-stat-label">Restaurants aangesloten</span>
+          </div>
+          <div class="mission-divider"></div>
+          <div class="mission-stat">
+            <span class="mission-stat-number">2.800</span>
+            <span class="mission-stat-label">Video's geproduceerd</span>
+          </div>
+          <div class="mission-divider"></div>
+          <div class="mission-stat">
+            <span class="mission-stat-number">100%</span>
+            <span class="mission-stat-label">No Cure No Pay</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="team-section">
-    <div class="reveal">
-      <div class="section-tag">Ons team</div>
-      <h2 class="section-title">De oprichters van <em>Tastory</em></h2>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-avatar">S</div>
-        <h3>Steijn Holtkamp</h3>
-        <p class="team-role">Co-founder</p>
-        <p class="team-desc">Gepassioneerd door fotografie en storytelling via food imagery. Steijn zorgt ervoor dat elk restaurant zich visueel op zijn best kan presenteren.</p>
-        <div class="team-contact">
-          <a href="tel:+31640866979">06 40 86 69 79</a>
-          <a href="mailto:Steijn@tastory.nl">Steijn@tastory.nl</a>
-        </div>
+    <div class="team-section-inner">
+      <div class="reveal">
+        <div class="section-tag">Ons team</div>
+        <h2 class="section-title">De oprichters van <em>Tastory</em></h2>
       </div>
-      <div class="team-card reveal">
-        <div class="team-avatar">F</div>
-        <h3>Fallon Rillmann</h3>
-        <p class="team-role">Co-founder</p>
-        <p class="team-desc">Gedreven door restaurant discovery en culturele verhalen. Fallon bouwt de brug tussen gasten en de restaurants die écht bij hen passen.</p>
-        <div class="team-contact">
-          <a href="tel:+31624774605">06 24 77 46 05</a>
-          <a href="mailto:Fallon@tastory.nl">Fallon@tastory.nl</a>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-photo-wrapper">
+            <img src={`${base}/steijn.png`} alt="Steijn Holtkamp, Co-founder van Tastory" class="team-photo" width="400" height="400" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Steijn Holtkamp</h3>
+            <p class="team-role">Co-founder</p>
+            <p class="team-desc">Gepassioneerd door fotografie en storytelling via food imagery. Steijn zorgt ervoor dat elk restaurant zich visueel op zijn best kan presenteren.</p>
+            <div class="team-contact">
+              <a href="tel:+31640866979">06 40 86 69 79</a>
+              <a href="mailto:Steijn@tastory.nl">Steijn@tastory.nl</a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo-wrapper">
+            <img src={`${base}/fallon.png`} alt="Fallon Rillmann, Co-founder van Tastory" class="team-photo" width="400" height="400" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Fallon Rillmann</h3>
+            <p class="team-role">Co-founder</p>
+            <p class="team-desc">Gedreven door restaurant discovery en culturele verhalen. Fallon bouwt de brug tussen gasten en de restaurants die écht bij hen passen.</p>
+            <div class="team-contact">
+              <a href="tel:+31624774605">06 24 77 46 05</a>
+              <a href="mailto:Fallon@tastory.nl">Fallon@tastory.nl</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,83 +85,100 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: linear-gradient(160deg, #3a2e22 0%, #4a3828 30%, #5a4232 60%, #3a2e22 100%);
-    padding: 10rem 3rem 5rem;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .page-hero-inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .page-hero-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 252, 248, 0.75);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .about-mission {
-    text-align: left;
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
   }
 
   .about-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.9;
     color: var(--text-muted);
     max-width: 700px;
     margin-bottom: 1.5rem;
   }
 
+  .mission-card {
+    background: var(--white);
+    border: 1px solid rgba(136, 101, 69, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mission-stat { text-align: center; }
+
+  .mission-stat-number {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: 0.3rem;
+  }
+
+  .mission-stat-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .mission-divider { height: 1px; background: rgba(136, 101, 69, 0.08); }
+
+  /* Team */
   .team-section {
     background: var(--white);
-    padding: 7rem 3rem;
+    padding: 8rem 3rem;
     max-width: 100%;
   }
 
-  .team-section > .reveal,
-  .team-grid {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .team-section-inner { max-width: 1400px; margin: 0 auto; }
 
   .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
   }
 
   .team-card {
     background: var(--beige);
-    border: 1px solid rgba(136, 101, 69, 0.08);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: center;
+    border: 1px solid rgba(136, 101, 69, 0.06);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .team-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--orange), var(--brown));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 2rem;
-    color: white;
-    margin: 0 auto 1.5rem;
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
   }
 
-  .team-card h3 {
+  .team-photo-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--beige-dark), var(--beige-deeper));
+  }
+
+  .team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .team-card:hover .team-photo { transform: scale(1.03); }
+
+  .team-info { padding: 2rem 2.5rem 2.5rem; }
+
+  .team-info h3 {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--text);
     margin-bottom: 0.3rem;
   }
@@ -136,21 +187,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 1rem;
     color: var(--orange);
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
   }
 
   .team-desc {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
   }
 
-  .team-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+  .team-contact { display: flex; flex-direction: column; gap: 0.4rem; }
 
   .team-contact a {
     font-size: 1rem;
@@ -159,12 +207,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     transition: color 0.3s;
   }
 
-  .team-contact a:hover {
-    color: var(--orange);
+  .team-contact a:hover { color: var(--orange); }
+
+  @media (max-width: 1024px) {
+    .mission-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
 
   @media (max-width: 768px) {
     .team-grid { grid-template-columns: 1fr; }
-    .page-hero { padding: 8rem 1.5rem 4rem; }
   }
 </style>
