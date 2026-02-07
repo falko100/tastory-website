@@ -1,38 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 ---
 
-<BaseLayout title="Contact — Tastory" description="Neem contact op met Tastory. Wij helpen je graag verder.">
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="section-tag">Contact</div>
-      <h1 class="section-title" style="color: var(--white)"><em>Vragen?</em></h1>
-      <p class="page-hero-desc">Klaar met de ruis en mindere restaurantervaringen? Of je nu als gast zoekt naar actuele en betrouwbare restaurantprofielen of als ondernemer jouw restaurant overtuigend en representatief wilt presenteren: Tastory brengt jullie samen.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Contact — Tastory"
+  description="Neem contact op met Tastory. Wij helpen je graag verder."
+>
+  <PageHero
+    tag="Contact"
+    title="<em>Vragen?</em>"
+    description="Klaar met de ruis en mindere restaurantervaringen? Of je nu als gast zoekt naar actuele en betrouwbare restaurantprofielen of als ondernemer jouw restaurant overtuigend en representatief wilt presenteren: Tastory brengt jullie samen."
+  />
 
   <section class="contact-content">
     <div class="contact-grid">
       <div class="contact-form-wrapper reveal">
         <h2 class="section-title">Stuur ons een <em>bericht</em></h2>
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" aria-label="Contactformulier">
           <div class="form-group">
             <label for="contact-name">Naam *</label>
-            <input type="text" id="contact-name" name="name" required>
+            <input type="text" id="contact-name" name="name" required />
           </div>
           <div class="form-group">
             <label for="contact-email">E-mailadres *</label>
-            <input type="email" id="contact-email" name="email" required>
+            <input type="email" id="contact-email" name="email" required />
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="contact-phone">Telefoonnummer</label>
-              <input type="tel" id="contact-phone" name="phone">
+              <input type="tel" id="contact-phone" name="phone" />
             </div>
             <div class="form-group">
               <label for="contact-company">Bedrijfsnaam</label>
-              <input type="text" id="contact-company" name="company">
+              <input type="text" id="contact-company" name="company" />
             </div>
           </div>
           <div class="form-group">
@@ -41,36 +42,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="form-group">
             <label for="contact-callback">Gewenst terugbel moment</label>
-            <input type="text" id="contact-callback" name="callback" placeholder="Bijv. dinsdag tussen 10:00 en 12:00">
+            <input
+              type="text"
+              id="contact-callback"
+              name="callback"
+              placeholder="Bijv. dinsdag tussen 10:00 en 12:00"
+            />
           </div>
           <button type="submit" class="btn-primary">Verstuur bericht</button>
-          <div class="contact-feedback" id="contact-feedback"></div>
+          <div class="contact-feedback" id="contact-feedback" role="status"></div>
         </form>
       </div>
 
       <div class="contact-info reveal">
         <div class="info-card">
           <h3>Adres</h3>
-          <p>Klooster Dolphia<br>Gronausestraat 710<br>7534 AM Enschede</p>
+          <p>Klooster Dolphia<br />Gronausestraat 710<br />7534 AM Enschede</p>
         </div>
         <div class="info-card">
           <h3>Openingstijden</h3>
-          <p>Ma&ndash;Vr: 8:00 &ndash; 18:00<br>Za: 10:00 &ndash; 14:00</p>
+          <p>Ma&ndash;Vr: 8:00 &ndash; 18:00<br />Za: 10:00 &ndash; 14:00</p>
         </div>
         <div class="info-card">
           <h3>Contact</h3>
           <p><a href="tel:+31624774605">06 24 77 46 05</a></p>
           <p><a href="mailto:Info@tastory.nl">Info@tastory.nl</a></p>
-          <p><a href="https://instagram.com/Tastory.app" target="_blank" rel="noopener">Instagram @Tastory.app</a></p>
+          <p>
+            <a href="https://instagram.com/Tastory.app" target="_blank" rel="noopener"
+              >Instagram @Tastory.app</a>
+          </p>
         </div>
         <div class="info-card">
           <h3>Zakelijk</h3>
-          <p>KVK: 98537733<br>BTW: NL868537883B01</p>
+          <p>KVK: 98537733<br />BTW: NL868537883B01</p>
         </div>
       </div>
     </div>
   </section>
-
 </BaseLayout>
 
 <script>
@@ -88,7 +96,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     try {
       const res = await fetch('https://formsubmit.co/ajax/Info@tastory.nl', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           name: data.get('name'),
           email: data.get('email'),
@@ -101,7 +109,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
 
       if (res.ok) {
-        feedback.textContent = 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.';
+        feedback.textContent =
+          'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.';
         feedback.className = 'contact-feedback contact-feedback--success';
         form.reset();
       } else {
@@ -137,17 +146,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--space-lg);
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-sm);
   }
 
   .form-group label {
-    font-size: 1rem;
+    font-size: var(--text-base);
     font-weight: 500;
     color: var(--text);
   }
@@ -155,10 +164,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .form-group input,
   .form-group textarea {
     font-family: var(--sans);
-    font-size: 1rem;
+    font-size: var(--text-base);
     padding: 0.9rem 1.2rem;
     border: 1px solid rgba(136, 101, 69, 0.15);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     background: var(--white);
     color: var(--text);
     outline: none;
@@ -177,11 +186,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: var(--space-lg);
   }
 
   .contact-feedback {
-    font-size: 1rem;
+    font-size: var(--text-base);
     min-height: 1.5rem;
     transition: all 0.3s;
   }
@@ -197,25 +206,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--space-xl);
   }
 
   .info-card {
     background: var(--white);
     border: 1px solid rgba(136, 101, 69, 0.06);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 1.8rem;
   }
 
   .info-card h3 {
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: var(--text-xl);
     color: var(--text);
     margin-bottom: 0.8rem;
   }
 
   .info-card p {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
   }
@@ -231,7 +240,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 768px) {
-    .contact-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -13,13 +13,15 @@ const { testimonials } = Astro.props;
       <div class="section-title">Wat toekomstige gebruikers over <em>Tastory</em> zeggen</div>
     </div>
     <div class="testimonials-grid">
-      {testimonials.map((t) => (
-        <div class="testimonial-card reveal">
-          <p class="testimonial-quote">{t.quote}</p>
-          <div class="testimonial-author">{t.author}</div>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-      ))}
+      {
+        testimonials.map((t) => (
+          <div class="testimonial-card reveal">
+            <p class="testimonial-quote">{t.quote}</p>
+            <div class="testimonial-author">{t.author}</div>
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>
@@ -38,7 +40,8 @@ const { testimonials } = Astro.props;
     font-size: 20rem;
     color: rgba(255, 142, 62, 0.04);
     position: absolute;
-    top: -3rem; left: 5%;
+    top: -3rem;
+    left: 5%;
     line-height: 1;
   }
 
@@ -68,7 +71,8 @@ const { testimonials } = Astro.props;
     font-size: 3rem;
     color: rgba(255, 142, 62, 0.2);
     position: absolute;
-    top: 0.8rem; left: 1.5rem;
+    top: 0.8rem;
+    left: 1.5rem;
     line-height: 1;
   }
 
@@ -94,10 +98,14 @@ const { testimonials } = Astro.props;
   }
 
   @media (max-width: 1024px) {
-    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 640px) {
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section class="hero">
@@ -15,7 +16,11 @@
         In 2026 live
       </div>
       <h1>Find it. Taste it. <em>Share it.</em></h1>
-      <p class="hero-desc">De ultieme smaakvolle verbinding tussen gast en restaurant. Via Tastory kunnen restaurants zich beter en eerlijker presenteren, terwijl gebruikers snel en eenvoudig restaurants ontdekken die écht bij hen passen.</p>
+      <p class="hero-desc">
+        De ultieme smaakvolle verbinding tussen gast en restaurant. Via Tastory kunnen restaurants
+        zich beter en eerlijker presenteren, terwijl gebruikers snel en eenvoudig restaurants
+        ontdekken die écht bij hen passen.
+      </p>
       <div class="hero-actions">
         <a href="#download" class="btn-primary">Ontdek de mogelijkheden</a>
         <a href="#oplossingen" class="btn-secondary">Meer informatie</a>
@@ -28,16 +33,13 @@
           <div class="phone-notch"></div>
           <div class="phone-screen">
             <div class="phone-feed">
-              <div class="phone-video-area">
-                <iframe
-                  class="phone-video-iframe"
-                  src="https://www.youtube.com/embed/jbv-DdTNohI?autoplay=1&mute=1&loop=1&playlist=jbv-DdTNohI&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1"
-                  frameborder="0"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                  title="Tastory video"
-                  loading="lazy"
-                ></iframe>
+              <div class="phone-video-area" id="video-facade">
+                <button class="video-play-btn" aria-label="Video afspelen" id="play-video-btn">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <circle cx="24" cy="24" r="24" fill="rgba(255,142,62,0.85)"></circle>
+                    <path d="M19 15l14 9-14 9V15z" fill="white"></path>
+                  </svg>
+                </button>
                 <div class="phone-sidebar">
                   <div>
                     <div class="phone-sidebar-icon">&hearts;</div>
@@ -104,13 +106,21 @@
     justify-content: center;
     overflow: hidden;
     padding: 9rem 3rem 5rem;
+    max-width: 100%;
   }
 
   .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(160deg, #2e2318 0%, #3d2f1f 25%, #4a3828 50%, #3a2e22 75%, #2e2318 100%);
+    background: linear-gradient(
+      160deg,
+      #2e2318 0%,
+      #3d2f1f 25%,
+      #4a3828 50%,
+      #3a2e22 75%,
+      #2e2318 100%
+    );
   }
 
   .hero-orb {
@@ -120,9 +130,27 @@
     pointer-events: none;
   }
 
-  .hero-orb-1 { width: 600px; height: 600px; background: rgba(255, 142, 62, 0.07); top: -10%; right: 10%; }
-  .hero-orb-2 { width: 400px; height: 400px; background: rgba(136, 101, 69, 0.08); bottom: -15%; left: 5%; }
-  .hero-orb-3 { width: 300px; height: 300px; background: rgba(255, 142, 62, 0.04); top: 50%; left: 40%; }
+  .hero-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 142, 62, 0.07);
+    top: -10%;
+    right: 10%;
+  }
+  .hero-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(136, 101, 69, 0.08);
+    bottom: -15%;
+    left: 5%;
+  }
+  .hero-orb-3 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 142, 62, 0.04);
+    top: 50%;
+    left: 40%;
+  }
 
   .hero-content {
     position: relative;
@@ -136,7 +164,9 @@
     align-items: center;
   }
 
-  .hero-text { animation: fadeUp 1s 0.2s ease both; }
+  .hero-text {
+    animation: fadeUp 1s 0.2s ease both;
+  }
 
   .hero-badge {
     display: inline-flex;
@@ -156,7 +186,8 @@
   }
 
   .hero-badge-dot {
-    width: 8px; height: 8px;
+    width: 8px;
+    height: 8px;
     background: var(--orange);
     border-radius: 50%;
     animation: blink 2s ease-in-out infinite;
@@ -173,7 +204,10 @@
     text-shadow: 0 2px 30px rgba(58, 46, 34, 0.3);
   }
 
-  .hero h1 em { color: var(--orange); font-style: italic; }
+  .hero h1 em {
+    color: var(--orange);
+    font-style: italic;
+  }
 
   .hero-desc {
     font-size: 1.15rem;
@@ -183,7 +217,12 @@
     margin-bottom: 2.8rem;
   }
 
-  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
   /* Phone */
   .hero-visual {
@@ -195,8 +234,10 @@
 
   .phone-glow {
     position: absolute;
-    width: 350px; height: 350px;
-    top: 50%; left: 50%;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, rgba(255, 142, 62, 0.15) 0%, transparent 70%);
     border-radius: 50%;
@@ -205,10 +246,14 @@
     z-index: 0;
   }
 
-  .phone-wrapper { position: relative; z-index: 1; }
+  .phone-wrapper {
+    position: relative;
+    z-index: 1;
+  }
 
   .phone-mockup {
-    width: 280px; height: 580px;
+    width: 280px;
+    height: 580px;
     background: #1a1714;
     border-radius: 42px;
     border: 3px solid rgba(255, 252, 248, 0.12);
@@ -222,75 +267,133 @@
   }
 
   .phone-notch {
-    position: absolute; top: 0; left: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
     transform: translateX(-50%);
-    width: 100px; height: 26px;
+    width: 100px;
+    height: 26px;
     background: #0e0c0a;
     border-radius: 0 0 18px 18px;
     z-index: 5;
   }
 
   .phone-screen {
-    position: absolute; inset: 5px;
+    position: absolute;
+    inset: 5px;
     border-radius: 38px;
     overflow: hidden;
     background: #161310;
   }
 
-  .phone-feed { width: 100%; height: 100%; position: relative; }
+  .phone-feed {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 
   .phone-video-area {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     position: relative;
     background: linear-gradient(160deg, #2a1f12 0%, #1a140a 40%, #18120e 100%);
   }
 
   .phone-video-iframe {
-    position: absolute; top: 50%; left: 50%;
-    width: 300%; height: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 200%;
     transform: translate(-50%, -50%);
-    pointer-events: none; border: none;
+    pointer-events: none;
+    border: none;
   }
 
   .phone-sidebar {
-    position: absolute; right: 10px; bottom: 105px;
-    display: flex; flex-direction: column; gap: 0.9rem; align-items: center; z-index: 2;
-  }
-
-  .phone-sidebar-icon {
-    width: 30px; height: 30px; border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.65rem; color: rgba(255,252,248,0.9);
-  }
-
-  .phone-sidebar-label { font-size: 0.42rem; color: rgba(255,252,248,0.5); text-align: center; margin-top: -0.4rem; }
-
-  .phone-bottom-overlay {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 1.1rem;
-    background: linear-gradient(transparent, rgba(14,12,10,0.95));
+    position: absolute;
+    right: 10px;
+    bottom: 105px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
     z-index: 2;
   }
 
-  .phone-user-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+  .phone-sidebar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: rgba(255, 252, 248, 0.9);
+  }
+
+  .phone-sidebar-label {
+    font-size: var(--text-xs);
+    color: rgba(255, 252, 248, 0.5);
+    text-align: center;
+    margin-top: -0.4rem;
+  }
+
+  .phone-bottom-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.1rem;
+    background: linear-gradient(transparent, rgba(14, 12, 10, 0.95));
+    z-index: 2;
+  }
+
+  .phone-user-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
 
   .phone-avatar {
-    width: 24px; height: 24px; border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--orange), var(--brown));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.5rem; font-weight: 700; color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: white;
   }
 
-  .phone-username { font-size: 0.6rem; font-weight: 600; color: rgba(255,252,248,0.95); }
-  .phone-verified { font-size: 0.5rem; color: var(--orange); }
+  .phone-username {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgba(255, 252, 248, 0.95);
+  }
+  .phone-verified {
+    font-size: 0.5rem;
+    color: var(--orange);
+  }
 
   .phone-caption {
-    font-family: var(--serif); font-size: 0.78rem;
-    color: rgba(255,252,248,0.95); line-height: 1.3; margin-bottom: 0.3rem;
+    font-family: var(--serif);
+    font-size: 0.78rem;
+    color: rgba(255, 252, 248, 0.95);
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
   }
 
-  .phone-meta { display: flex; gap: 0.7rem; font-size: 0.5rem; color: rgba(255,252,248,0.45); }
+  .phone-meta {
+    display: flex;
+    gap: 0.7rem;
+    font-size: 0.5rem;
+    color: rgba(255, 252, 248, 0.45);
+  }
 
   /* Float cards */
   .float-card {
@@ -302,29 +405,115 @@
     padding: 0.75rem 1rem;
     animation: float 6s ease-in-out infinite;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(58, 46, 34, 0.06), 0 12px 40px rgba(58, 46, 34, 0.08);
+    box-shadow:
+      0 4px 12px rgba(58, 46, 34, 0.06),
+      0 12px 40px rgba(58, 46, 34, 0.08);
   }
 
-  .float-card-1 { top: 10%; right: -50px; animation-delay: 0s; }
-  .float-card-2 { bottom: 16%; left: -45px; animation-delay: 2s; }
-  .float-card-3 { top: 52%; right: -60px; animation-delay: 4s; }
+  .float-card-1 {
+    top: 10%;
+    right: -50px;
+    animation-delay: 0s;
+  }
+  .float-card-2 {
+    bottom: 16%;
+    left: -45px;
+    animation-delay: 2s;
+  }
+  .float-card-3 {
+    top: 52%;
+    right: -60px;
+    animation-delay: 4s;
+  }
 
-  .fc-label { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.15rem; }
-  .fc-value { font-family: var(--serif); font-size: 1.1rem; color: var(--brown); }
-  .fc-value-sm { font-size: 1rem; margin-left: 0.2rem; }
-  .fc-row { display: flex; align-items: center; gap: 0.3rem; }
-  .fc-stars { color: var(--orange); font-size: 1rem; }
+  .fc-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+  .fc-value {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--brown);
+  }
+  .fc-value-sm {
+    font-size: 1rem;
+    margin-left: 0.2rem;
+  }
+  .fc-row {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .fc-stars {
+    color: var(--orange);
+    font-size: 1rem;
+  }
 
   @media (max-width: 1024px) {
-    .hero-content { grid-template-columns: 1fr; text-align: center; }
-    .hero-desc { margin-left: auto; margin-right: auto; }
-    .hero-actions { justify-content: center; }
-    .hero-badge { margin-left: auto; margin-right: auto; }
-    .hero-visual { margin-top: 3rem; }
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-actions {
+      justify-content: center;
+    }
+    .hero-badge {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-visual {
+      margin-top: 3rem;
+    }
+  }
+
+  /* Video facade */
+  .video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .video-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
   }
 
   @media (max-width: 640px) {
-    .hero { padding: 8rem 1.5rem 3rem; }
-    .float-card { display: none; }
+    .hero {
+      padding: 8rem 1.5rem 3rem;
+    }
+    .float-card {
+      display: none;
+    }
   }
 </style>
+
+<script>
+  const playBtn = document.getElementById('play-video-btn');
+  const facade = document.getElementById('video-facade');
+  if (playBtn && facade) {
+    playBtn.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.className = 'phone-video-iframe';
+      iframe.src =
+        'https://www.youtube.com/embed/jbv-DdTNohI?autoplay=1&mute=1&loop=1&playlist=jbv-DdTNohI&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1';
+      iframe.allow = 'autoplay; encrypted-media';
+      iframe.allowFullscreen = true;
+      iframe.title = 'Tastory video';
+      iframe.style.border = 'none';
+      playBtn.replaceWith(iframe);
+    });
+  }
+</script>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  tag: string;
+  title: string;
+  description?: string;
+  center?: boolean;
+}
+
+const { tag, title, description, center = false } = Astro.props;
+---
+
+<div class:list={['section-header', { 'section-header--center': center }]}>
+  <div class="section-tag">{tag}</div>
+  <div class="section-title" set:html={title} />
+  {description && <p class="section-desc">{description}</p>}
+</div>
+
+<style>
+  .section-header--center {
+    text-align: center;
+  }
+
+  .section-header--center .section-tag {
+    justify-content: center;
+  }
+</style>

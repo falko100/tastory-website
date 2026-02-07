@@ -12,14 +12,16 @@ const { highlights } = Astro.props;
     <div class="section-title">Het laatste <em>nieuws</em></div>
   </div>
   <div class="highlights-grid">
-    {highlights.map((item) => (
-      <div class="highlight-card reveal">
-        <div class="highlight-date">{item.date}</div>
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
-        <div class="highlight-link">Lees meer</div>
-      </div>
-    ))}
+    {
+      highlights.map((item) => (
+        <div class="highlight-card reveal">
+          <div class="highlight-date">{item.date}</div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <div class="highlight-link">Lees meer</div>
+        </div>
+      ))
+    }
   </div>
 </section>
 
@@ -96,10 +98,14 @@ const { highlights } = Astro.props;
   }
 
   @media (max-width: 1024px) {
-    .highlights-grid { grid-template-columns: 1fr 1fr; }
+    .highlights-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 640px) {
-    .highlights-grid { grid-template-columns: 1fr; }
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

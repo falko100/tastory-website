@@ -1,17 +1,29 @@
 ---
+
 ---
 
 <section class="cta-section" id="download">
   <div class="cta-inner reveal">
     <div class="section-tag" style="justify-content:center">Blijf op de hoogte</div>
     <h2>Klaar om restaurants in een <em>nieuw licht</em> te zien?</h2>
-    <p>Op de hoogte blijven van alle Tastory nieuws? Meld je aan voor de nieuwsbrief en ontvang updates over de lancering van onze app!</p>
+    <p>
+      Op de hoogte blijven van alle Tastory nieuws? Meld je aan voor de nieuwsbrief en ontvang
+      updates over de lancering van onze app!
+    </p>
     <form class="email-form" id="newsletter-form">
-      <input type="email" id="newsletter-email" placeholder="Jouw e-mailadres" required aria-label="E-mailadres">
+      <input
+        type="email"
+        id="newsletter-email"
+        placeholder="Jouw e-mailadres"
+        required
+        aria-label="E-mailadres"
+      />
       <button type="submit">Aanmelden</button>
     </form>
     <div class="form-feedback" id="form-feedback"></div>
-    <div class="cta-note">Geen spam. Altijd opzegbaar. Binnenkort beschikbaar op iOS &amp; Android.</div>
+    <div class="cta-note">
+      Geen spam. Altijd opzegbaar. Binnenkort beschikbaar op iOS &amp; Android.
+    </div>
   </div>
 </section>
 
@@ -32,7 +44,7 @@
     try {
       const res = await fetch('https://formsubmit.co/ajax/Info@tastory.nl', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           email,
           _subject: 'Nieuwe nieuwsbrief aanmelding — Tastory',
@@ -73,9 +85,11 @@
   .cta-section::before {
     content: '';
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px; height: 600px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, rgba(255, 142, 62, 0.06) 0%, transparent 60%);
     pointer-events: none;
   }
@@ -148,7 +162,9 @@
     border-radius: 0 100px 100px 0;
   }
 
-  .email-form button:hover { background: var(--orange-dark); }
+  .email-form button:hover {
+    background: var(--orange-dark);
+  }
 
   .form-feedback {
     font-size: 1rem;
@@ -173,7 +189,13 @@
   }
 
   @media (max-width: 640px) {
-    .email-form { flex-direction: column; border-radius: 16px; }
-    .email-form button { width: 100%; border-radius: 0 0 16px 16px; }
+    .email-form {
+      flex-direction: column;
+      border-radius: 16px;
+    }
+    .email-form button {
+      width: 100%;
+      border-radius: 0 0 16px 16px;
+    }
   }
 </style>

@@ -1,16 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Oplossingen voor gebruikers — Tastory" description="Ontdek restaurants die écht bij jou passen. Download de app, proef en deel jouw ervaringen.">
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="section-tag">Gebruikers</div>
-      <h1 class="section-title" style="color: var(--white)">Oplossingen voor <em>gebruikers</em></h1>
-      <p class="page-hero-desc">Ontdek het restaurant dat perfect bij jouw stemming, budget en gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te inspireren.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Oplossingen voor gebruikers — Tastory"
+  description="Ontdek restaurants die écht bij jou passen. Download de app, proef en deel jouw ervaringen."
+>
+  <PageHero
+    tag="Gebruikers"
+    title="Oplossingen voor <em>gebruikers</em>"
+    description="Ontdek het restaurant dat perfect bij jouw stemming, budget en gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te inspireren."
+  />
 
   <section>
     <div class="reveal">
@@ -21,17 +25,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="step-card reveal">
         <div class="step-number">01</div>
         <h3>Find it</h3>
-        <p>Download de app en ontdek het restaurant dat perfect bij jouw stemming, budget en gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te inspireren.</p>
+        <p>
+          Download de app en ontdek het restaurant dat perfect bij jouw stemming, budget en
+          gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te
+          inspireren.
+        </p>
       </div>
       <div class="step-card reveal">
         <div class="step-number">02</div>
         <h3>Taste it</h3>
-        <p>Ga langs en proef de beste gerechten bij jouw gekozen restaurant. Geniet van een ervaring die precies aansluit bij wat je had verwacht, dankzij de eerlijke en representatieve profielen.</p>
+        <p>
+          Ga langs en proef de beste gerechten bij jouw gekozen restaurant. Geniet van een ervaring
+          die precies aansluit bij wat je had verwacht, dankzij de eerlijke en representatieve
+          profielen.
+        </p>
       </div>
       <div class="step-card reveal">
         <div class="step-number">03</div>
         <h3>Share it</h3>
-        <p>Deel jouw ervaring met de community en help anderen bij het maken van hun volgende, nog betere restaurantkeuze. Tip: je kunt op onze app jouw eigen foodmap maken met alle bezochte restaurants!</p>
+        <p>
+          Deel jouw ervaring met de community en help anderen bij het maken van hun volgende, nog
+          betere restaurantkeuze. Tip: je kunt op onze app jouw eigen foodmap maken met alle
+          bezochte restaurants!
+        </p>
       </div>
     </div>
   </section>
@@ -43,34 +59,47 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
     <div class="user-features-grid">
       <div class="user-feature reveal">
-        <div class="user-feature-icon">🔍</div>
+        <div class="user-feature-icon"><Icon name="search" size={22} /></div>
         <h3>Gericht zoeken</h3>
-        <p>Filter op stemming, budget, keuken en gezelschap om precies het juiste restaurant te vinden.</p>
+        <p>
+          Filter op stemming, budget, keuken en gezelschap om precies het juiste restaurant te
+          vinden.
+        </p>
       </div>
       <div class="user-feature reveal">
-        <div class="user-feature-icon">🎬</div>
+        <div class="user-feature-icon"><Icon name="film" size={22} /></div>
         <h3>Video-profielen</h3>
-        <p>Bekijk sfeervolle video's van restaurants zodat je vooraf een goed beeld hebt van de beleving.</p>
+        <p>
+          Bekijk sfeervolle video's van restaurants zodat je vooraf een goed beeld hebt van de
+          beleving.
+        </p>
       </div>
       <div class="user-feature reveal">
-        <div class="user-feature-icon">🗺️</div>
+        <div class="user-feature-icon"><Icon name="map" size={22} /></div>
         <h3>Persoonlijke foodmap</h3>
         <p>Maak je eigen foodmap met alle bezochte restaurants en deel deze met vrienden.</p>
       </div>
       <div class="user-feature reveal">
-        <div class="user-feature-icon">💬</div>
+        <div class="user-feature-icon"><Icon name="message-circle" size={22} /></div>
         <h3>Community reviews</h3>
-        <p>Lees en schrijf eerlijke reviews die andere gasten helpen bij het maken van hun keuze.</p>
+        <p>
+          Lees en schrijf eerlijke reviews die andere gasten helpen bij het maken van hun keuze.
+        </p>
       </div>
       <div class="user-feature reveal">
-        <div class="user-feature-icon">📲</div>
+        <div class="user-feature-icon"><Icon name="smartphone" size={22} /></div>
         <h3>Delen met vrienden</h3>
-        <p>Deel jouw favoriete restaurants en ervaringen eenvoudig via de app met vrienden en familie.</p>
+        <p>
+          Deel jouw favoriete restaurants en ervaringen eenvoudig via de app met vrienden en
+          familie.
+        </p>
       </div>
       <div class="user-feature reveal">
-        <div class="user-feature-icon">⭐</div>
+        <div class="user-feature-icon"><Icon name="star" size={22} /></div>
         <h3>Betrouwbare matches</h3>
-        <p>Onze matching zorgt ervoor dat je verwachtingen overeenkomen met de werkelijke ervaring.</p>
+        <p>
+          Onze matching zorgt ervoor dat je verwachtingen overeenkomen met de werkelijke ervaring.
+        </p>
       </div>
     </div>
   </section>
@@ -78,11 +107,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="cta-users">
     <div class="cta-users-inner reveal">
       <h2 class="section-title">Klaar om te <em>ontdekken?</em></h2>
-      <p>De Tastory app komt binnenkort beschikbaar op iOS en Android. Meld je aan voor de nieuwsbrief en wees de eerste die het hoort!</p>
-      <a href="/tastory-website/#download" class="btn-primary">Aanmelden voor updates</a>
+      <p>
+        De Tastory app komt binnenkort beschikbaar op iOS en Android. Meld je aan voor de
+        nieuwsbrief en wees de eerste die het hoort!
+      </p>
+      <a href={`${base}/#download`} class="btn-primary">Aanmelden voor updates</a>
     </div>
   </section>
-
 </BaseLayout>
 
 <style>
@@ -111,14 +142,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .step-card h3 {
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     color: var(--text);
     font-style: italic;
     margin-bottom: 1rem;
   }
 
   .step-card p {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
   }
@@ -149,30 +180,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .user-feature {
     background: var(--beige);
     border: 1px solid rgba(136, 101, 69, 0.06);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2rem;
     transition: all 0.4s;
   }
 
   .user-feature:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 50px rgba(136, 101, 69, 0.08);
+    box-shadow: var(--shadow-lg);
   }
 
   .user-feature-icon {
-    font-size: 1.8rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 142, 62, 0.08);
+    border: 1px solid rgba(255, 142, 62, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
     margin-bottom: 1rem;
   }
 
   .user-feature h3 {
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: var(--text-xl);
     color: var(--text);
     margin-bottom: 0.6rem;
   }
 
   .user-feature p {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
   }
@@ -197,11 +236,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .user-features-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .user-features-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 640px) {
-    .user-features-grid { grid-template-columns: 1fr; }
+    .user-features-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

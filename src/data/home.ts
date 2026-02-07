@@ -1,0 +1,84 @@
+export const stats = [
+  { number: '340+', label: 'Restaurants' },
+  { number: '2.800', label: "Chef-video's" },
+  { number: '4K+', label: 'Filmkwaliteit' },
+  { number: '100%', label: 'No Cure No Pay' },
+];
+
+export const features = [
+  {
+    icon: 'video',
+    title: 'Videocontent',
+    description:
+      "Geen statische foto's meer. Restaurants presenteren zich via sfeervolle, kwalitatieve video's die de beleving écht overbrengen aan potentiële gasten.",
+  },
+  {
+    icon: 'target',
+    title: 'Gericht op klanten',
+    description:
+      'Via ons platform vinden gebruikers het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
+  },
+  {
+    icon: 'gem',
+    title: 'Kwaliteit door openheid',
+    description:
+      'Profielen die aansluiten bij de realiteit, het verhaal van het restaurant vertellen en ook kwetsbaarheid tonen. Wij geloven dat het verhaal ten grondslag ligt aan succes.',
+  },
+  {
+    icon: 'repeat',
+    title: 'Terugkerende gasten',
+    description:
+      'Bezoekers komen niet alleen langs, maar ze komen ook terug. Tastory helpt restaurants met zichtbaarheid, imago en het vergroten van een loyale gastenkring.',
+  },
+  {
+    icon: 'share',
+    title: 'Delen & ontdekken',
+    description:
+      'Deel ervaringen met vrienden en inspireer anderen om de restaurants te bezoeken waar jij zelf zo van genoten hebt. Sociaal, smaakvol en persoonlijk.',
+  },
+  {
+    icon: 'tag',
+    title: 'No Cure No Pay',
+    description:
+      'Gun jouw verhaal een podium zonder risico. Jouw doelgroep is al gebruiker — Tastory werkt op basis van no cure no pay, zodat je alleen betaalt bij resultaat.',
+  },
+];
+
+export const highlights = [
+  {
+    date: '2 januari 2026',
+    title: 'Wij staan op de Horecava in januari!',
+    description:
+      'In de week van 12 tot en met 15 januari vindt de jaarlijkse Horecava vakbeurs plaats. De plek om de nieuwste trends, producten en oplossingen voor de horeca te ontdekken. Tastory is aanwezig met een eigen stand en gaat zelfs pitchen!',
+  },
+  {
+    date: '23 december 2025',
+    title: 'Bedrijfsinschrijving en merkregistratie',
+    description:
+      'Op vrijdag 10 oktober is Tastory ingeschreven in het handelsregister. Na afloop hebben wij het proces van merkregistratie gestart bij het BOIP. Ons merk is vandaag officieel geregistreerd!',
+  },
+  {
+    date: '9 juni 2025',
+    title: 'Innovatie vanuit frustratie',
+    description:
+      'Vanuit onze ervaring is het een simpele vraag — welk restaurant? — wat keer op keer lastig te beantwoorden blijkt. Daarom bouwden wij Tastory.',
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      'Ik vind dat uiteten gaan een beleving moet zijn. Ik ben ervan overtuigd dat Tastory gaat zorgen dat ik met een veel beter gevoel een restaurant verlaat.',
+    author: 'Thomas de Jong',
+  },
+  {
+    quote:
+      'TripAdvisor is onoverzichtelijk. Tastory zorgt ervoor dat ik veel makkelijker het juiste restaurant vind! Daarnaast is het een Nederlands bedrijf wat veel persoonlijker voelt.',
+    author: 'Lisa Jansen',
+  },
+  {
+    quote:
+      'Ik vind het leuk dat je niet alleen restaurants kan vinden, maar ook ervaringen kan delen met vrienden. Zo hoop ik anderen te inspireren om het restaurant te bezoeken waar ik zelf zo van genoten heb.',
+    author: 'Kim Reuvers',
+  },
+];

@@ -1,16 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 
-<BaseLayout title="Oplossingen voor restaurants — Tastory" description="Ontdek hoe Tastory restaurants helpt met zichtbaarheid, imago en terugkerende gasten.">
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="section-tag">Restaurants</div>
-      <h1 class="section-title" style="color: var(--white)">Ontdek Tastory, de app die met een representatief restaurantprofiel terugkerende gasten <em>realiseert</em></h1>
-      <p class="page-hero-desc">Tastory helpt restaurants gasten aan te trekken die oprecht jouw concept waarderen, door middel van authentieke en representatieve restaurantprofielen.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Oplossingen voor restaurants — Tastory"
+  description="Ontdek hoe Tastory restaurants helpt met zichtbaarheid, imago en terugkerende gasten."
+>
+  <PageHero
+    tag="Restaurants"
+    title="Ontdek Tastory, de app die met een representatief restaurantprofiel terugkerende gasten <em>realiseert</em>"
+    description="Tastory helpt restaurants gasten aan te trekken die oprecht jouw concept waarderen, door middel van authentieke en representatieve restaurantprofielen."
+  />
 
   <section>
     <div class="reveal">
@@ -21,22 +22,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="goal-card reveal">
         <div class="goal-number">01</div>
         <h3>Meer zichtbaarheid</h3>
-        <p>Word beter zichtbaar online door actuele, professionele content en updates op je restaurantprofiel.</p>
+        <p>
+          Word beter zichtbaar online door actuele, professionele content en updates op je
+          restaurantprofiel.
+        </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">02</div>
         <h3>Representatief imago</h3>
-        <p>Vertel het verhaal van jouw restaurant via short-form content en foto's. Gebruik je missie en visie om nieuwe gasten aan te trekken.</p>
+        <p>
+          Vertel het verhaal van jouw restaurant via short-form content en foto's. Gebruik je missie
+          en visie om nieuwe gasten aan te trekken.
+        </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">03</div>
         <h3>Terugkerende gasten</h3>
-        <p>Gebruik inzichten en gastervaringen om je profiel representatiever te maken, zodat verwachtingen overeenkomen met de werkelijkheid.</p>
+        <p>
+          Gebruik inzichten en gastervaringen om je profiel representatiever te maken, zodat
+          verwachtingen overeenkomen met de werkelijkheid.
+        </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">04</div>
         <h3>Betere reviews</h3>
-        <p>Gebruik het Tastory-dashboard om verbeteringen door te voeren, doelgroepen te targeten en ervaringen te verbeteren.</p>
+        <p>
+          Gebruik het Tastory-dashboard om verbeteringen door te voeren, doelgroepen te targeten en
+          ervaringen te verbeteren.
+        </p>
       </div>
     </div>
   </section>
@@ -84,10 +97,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section>
     <div class="reveal">
       <div class="section-tag">Professionele content</div>
-      <h2 class="section-title">Short-form video's die jouw restaurant <em>tot leven brengen</em></h2>
+      <h2 class="section-title">
+        Short-form video's die jouw restaurant <em>tot leven brengen</em>
+      </h2>
     </div>
     <div class="content-info reveal">
-      <p>Tastory werkt samen met gespecialiseerde contentmakers om de identiteit van jouw restaurant vast te leggen in professionele short-form content video's van ongeveer 30 seconden. Deze video's presenteren jouw restaurant of specifieke marketingelementen op een authentieke en aantrekkelijke manier.</p>
+      <p>
+        Tastory werkt samen met gespecialiseerde contentmakers om de identiteit van jouw restaurant
+        vast te leggen in professionele short-form content video's van ongeveer 30 seconden. Deze
+        video's presenteren jouw restaurant of specifieke marketingelementen op een authentieke en
+        aantrekkelijke manier.
+      </p>
     </div>
   </section>
 
@@ -99,19 +119,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="pillars-grid">
       <div class="pillar reveal"><span class="pillar-num">1</span><span>De 'why'</span></div>
       <div class="pillar reveal"><span class="pillar-num">2</span><span>Gewenst imago</span></div>
-      <div class="pillar reveal"><span class="pillar-num">3</span><span>Publieke perceptie</span></div>
+      <div class="pillar reveal">
+        <span class="pillar-num">3</span><span>Publieke perceptie</span>
+      </div>
       <div class="pillar reveal"><span class="pillar-num">4</span><span>Doelgroep</span></div>
       <div class="pillar reveal"><span class="pillar-num">5</span><span>KPI's</span></div>
     </div>
   </section>
-
 </BaseLayout>
 
 <style>
-  .page-hero-inner {
-    max-width: 800px;
-  }
-
   .goals-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -122,13 +139,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .goal-card {
     background: var(--white);
     border: 1px solid rgba(136, 101, 69, 0.06);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2.5rem;
   }
 
   .goal-number {
     font-family: var(--serif);
-    font-size: 2rem;
+    font-size: var(--text-3xl);
     color: var(--orange);
     margin-bottom: 1rem;
     opacity: 0.5;
@@ -142,7 +159,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .goal-card p {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
   }
@@ -192,7 +209,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--white);
     padding: 0.3rem 1.2rem;
     border-radius: 100px;
-    font-size: 1rem;
+    font-size: var(--text-base);
     font-weight: 600;
   }
 
@@ -205,19 +222,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .price {
     font-family: var(--serif);
-    font-size: 2rem;
+    font-size: var(--text-3xl);
     color: var(--orange);
     margin-bottom: 0.3rem;
   }
 
   .price span {
     font-family: var(--sans);
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
   }
 
   .price-per {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
     margin-bottom: 1.5rem;
   }
@@ -230,7 +247,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .pricing-card li {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text);
     padding-left: 1.5rem;
     position: relative;
@@ -281,14 +298,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .pillar {
     background: var(--beige);
     border: 1px solid rgba(136, 101, 69, 0.08);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2rem 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text);
     font-weight: 500;
   }
@@ -300,12 +317,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 1024px) {
-    .goals-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+    .goals-grid {
+      grid-template-columns: 1fr;
+    }
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+    .pillars-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media (max-width: 640px) {
-    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .pillars-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

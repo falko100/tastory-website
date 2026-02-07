@@ -1,26 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 
-const base = '/tastory-website';
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Over ons — Tastory" description="Het verhaal van Tastory: passie voor eten en de wens om verhalen samen te brengen.">
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="section-tag">Over ons</div>
-      <h1 class="section-title" style="color: var(--white)">Het verhaal achter <em>Tastory</em></h1>
-      <p class="page-hero-desc">Het verhaal van Tastory is begonnen met een eenvoudige en krachtige gedachte: de passie voor eten en de wens om verhalen samen te brengen.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Over ons — Tastory"
+  description="Het verhaal van Tastory: passie voor eten en de wens om verhalen samen te brengen."
+>
+  <PageHero
+    tag="Over ons"
+    title="Het verhaal achter <em>Tastory</em>"
+    description="Het verhaal van Tastory is begonnen met een eenvoudige en krachtige gedachte: de passie voor eten en de wens om verhalen samen te brengen."
+  />
 
   <section class="about-mission reveal">
     <div class="mission-grid">
       <div class="mission-text">
         <div class="section-tag">Onze missie</div>
         <h2 class="section-title">De perfecte match tussen restaurant en <em>gast</em></h2>
-        <p class="about-text">Tastory helpt restaurantbezoekers bij het vinden van restaurants die écht bij hun smaak en voorkeuren passen. Het platform transformeert de restaurantkeuze van giswerk naar een weloverwogen keuze door middel van representatieve, authentieke en visueel aantrekkelijke restaurantprofielen.</p>
-        <p class="about-text">Wij geloven dat de beste restaurantervaringen beginnen met de juiste verwachtingen. Daarom bieden wij een platform waarop restaurants zich eerlijk en inspirerend kunnen presenteren, terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.</p>
+        <p class="about-text">
+          Tastory helpt restaurantbezoekers bij het vinden van restaurants die écht bij hun smaak en
+          voorkeuren passen. Het platform transformeert de restaurantkeuze van giswerk naar een
+          weloverwogen keuze door middel van representatieve, authentieke en visueel aantrekkelijke
+          restaurantprofielen.
+        </p>
+        <p class="about-text">
+          Wij geloven dat de beste restaurantervaringen beginnen met de juiste verwachtingen. Daarom
+          bieden wij een platform waarop restaurants zich eerlijk en inspirerend kunnen presenteren,
+          terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.
+        </p>
       </div>
       <div class="mission-visual">
         <div class="mission-card">
@@ -52,12 +62,22 @@ const base = '/tastory-website';
       <div class="team-grid">
         <div class="team-card reveal">
           <div class="team-photo-wrapper">
-            <img src={`${base}/steijn.png`} alt="Steijn Holtkamp, Co-founder van Tastory" class="team-photo" width="400" height="400" loading="lazy">
+            <img
+              src={`${base}/steijn.png`}
+              alt="Steijn Holtkamp, Co-founder van Tastory"
+              class="team-photo"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
           </div>
           <div class="team-info">
             <h3>Steijn Holtkamp</h3>
             <p class="team-role">Co-founder</p>
-            <p class="team-desc">Gepassioneerd door fotografie en storytelling via food imagery. Steijn zorgt ervoor dat elk restaurant zich visueel op zijn best kan presenteren.</p>
+            <p class="team-desc">
+              Gepassioneerd door fotografie en storytelling via food imagery. Steijn zorgt ervoor
+              dat elk restaurant zich visueel op zijn best kan presenteren.
+            </p>
             <div class="team-contact">
               <a href="tel:+31640866979">06 40 86 69 79</a>
               <a href="mailto:Steijn@tastory.nl">Steijn@tastory.nl</a>
@@ -66,12 +86,22 @@ const base = '/tastory-website';
         </div>
         <div class="team-card reveal">
           <div class="team-photo-wrapper">
-            <img src={`${base}/fallon.png`} alt="Fallon Rillmann, Co-founder van Tastory" class="team-photo" width="400" height="400" loading="lazy">
+            <img
+              src={`${base}/fallon.png`}
+              alt="Fallon Rillmann, Co-founder van Tastory"
+              class="team-photo"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
           </div>
           <div class="team-info">
             <h3>Fallon Rillmann</h3>
             <p class="team-role">Co-founder</p>
-            <p class="team-desc">Gedreven door restaurant discovery en culturele verhalen. Fallon bouwt de brug tussen gasten en de restaurants die écht bij hen passen.</p>
+            <p class="team-desc">
+              Gedreven door restaurant discovery en culturele verhalen. Fallon bouwt de brug tussen
+              gasten en de restaurants die écht bij hen passen.
+            </p>
             <div class="team-contact">
               <a href="tel:+31624774605">06 24 77 46 05</a>
               <a href="mailto:Fallon@tastory.nl">Fallon@tastory.nl</a>
@@ -81,7 +111,6 @@ const base = '/tastory-website';
       </div>
     </div>
   </section>
-
 </BaseLayout>
 
 <style>
@@ -93,7 +122,7 @@ const base = '/tastory-website';
   }
 
   .about-text {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     line-height: 1.9;
     color: var(--text-muted);
     max-width: 700px;
@@ -110,7 +139,9 @@ const base = '/tastory-website';
     gap: 1.5rem;
   }
 
-  .mission-stat { text-align: center; }
+  .mission-stat {
+    text-align: center;
+  }
 
   .mission-stat-number {
     display: block;
@@ -121,12 +152,15 @@ const base = '/tastory-website';
   }
 
   .mission-stat-label {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
     letter-spacing: 0.04em;
   }
 
-  .mission-divider { height: 1px; background: rgba(136, 101, 69, 0.08); }
+  .mission-divider {
+    height: 1px;
+    background: rgba(136, 101, 69, 0.08);
+  }
 
   /* Team */
   .team-section {
@@ -135,7 +169,10 @@ const base = '/tastory-website';
     max-width: 100%;
   }
 
-  .team-section-inner { max-width: 1400px; margin: 0 auto; }
+  .team-section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
   .team-grid {
     display: grid;
@@ -172,19 +209,23 @@ const base = '/tastory-website';
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .team-card:hover .team-photo { transform: scale(1.03); }
+  .team-card:hover .team-photo {
+    transform: scale(1.03);
+  }
 
-  .team-info { padding: 2rem 2.5rem 2.5rem; }
+  .team-info {
+    padding: 2rem 2.5rem 2.5rem;
+  }
 
   .team-info h3 {
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     color: var(--text);
     margin-bottom: 0.3rem;
   }
 
   .team-role {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--orange);
     font-weight: 500;
     margin-bottom: 1.2rem;
@@ -192,28 +233,39 @@ const base = '/tastory-website';
   }
 
   .team-desc {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.75;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
   }
 
-  .team-contact { display: flex; flex-direction: column; gap: 0.4rem; }
+  .team-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 
   .team-contact a {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--brown);
     text-decoration: none;
     transition: color 0.3s;
   }
 
-  .team-contact a:hover { color: var(--orange); }
+  .team-contact a:hover {
+    color: var(--orange);
+  }
 
   @media (max-width: 1024px) {
-    .mission-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .mission-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 
   @media (max-width: 768px) {
-    .team-grid { grid-template-columns: 1fr; }
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

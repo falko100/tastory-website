@@ -1,21 +1,42 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
-<nav id="navbar">
-  <a href="/tastory-website/" class="logo">Tastory</a>
+<nav id="navbar" aria-label="Hoofdnavigatie">
+  <a href={`${base}/`} class="logo">Tastory</a>
   <ul class="nav-links">
-    <li><a href="/tastory-website/oplossingen" class="hide-mobile">Oplossingen</a></li>
-    <li><a href="/tastory-website/over-ons" class="hide-mobile">Over ons</a></li>
-    <li><a href="/tastory-website/blog" class="hide-mobile">Blog</a></li>
-    <li><a href="/tastory-website/contact" class="hide-mobile">Contact</a></li>
-    <li><a href="/tastory-website/#download" class="nav-cta">Download de App</a></li>
+    <li><a href={`${base}/oplossingen`}>Oplossingen</a></li>
+    <li><a href={`${base}/over-ons`}>Over ons</a></li>
+    <li><a href={`${base}/blog`}>Blog</a></li>
+    <li><a href={`${base}/contact`}>Contact</a></li>
+    <li><a href={`${base}/#download`} class="nav-cta">Download de App</a></li>
   </ul>
+  <button
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="Menu openen"
+  >
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+  </button>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href={`${base}/oplossingen`}>Oplossingen</a>
+    <a href={`${base}/over-ons`}>Over ons</a>
+    <a href={`${base}/blog`}>Blog</a>
+    <a href={`${base}/contact`}>Contact</a>
+    <a href={`${base}/#download`} class="nav-cta">Download de App</a>
+  </div>
 </nav>
 
-<style is:global>
-  nav#navbar {
+<style>
+  nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     padding: 1.1rem 3rem;
     display: flex;
@@ -25,15 +46,17 @@
     background: rgba(245, 235, 221, 0.8);
     border-bottom: 1px solid rgba(136, 101, 69, 0.08);
     animation: fadeDown 0.8s ease both;
-    transition: background 0.4s, box-shadow 0.4s;
+    transition:
+      background 0.4s,
+      box-shadow 0.4s;
   }
 
-  nav#navbar.scrolled {
+  nav:global(.scrolled) {
     background: rgba(245, 235, 221, 0.95);
     box-shadow: 0 4px 30px rgba(136, 101, 69, 0.06);
   }
 
-  nav#navbar .logo {
+  .logo {
     font-family: var(--serif);
     font-size: 1.7rem;
     color: var(--brown);
@@ -41,30 +64,29 @@
     text-decoration: none;
   }
 
-  nav#navbar .nav-links {
+  .nav-links {
     display: flex;
     gap: 2.2rem;
     list-style: none;
     align-items: center;
   }
 
-  nav#navbar .nav-links a {
+  .nav-links a {
     color: var(--brown);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: var(--text-base);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     transition: color 0.3s;
     font-weight: 400;
-  }
-
-  nav#navbar .nav-links a:hover { color: var(--orange); }
-
-  nav#navbar .nav-links a {
     position: relative;
   }
 
-  nav#navbar .nav-links a:not(.nav-cta)::after {
+  .nav-links a:hover {
+    color: var(--orange);
+  }
+
+  .nav-links a:not(.nav-cta)::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -75,11 +97,11 @@
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  nav#navbar .nav-links a:not(.nav-cta):hover::after {
+  .nav-links a:not(.nav-cta):hover::after {
     width: 100%;
   }
 
-  nav#navbar .nav-cta {
+  .nav-cta {
     background: var(--orange);
     color: var(--white) !important;
     padding: 0.65rem 1.6rem;
@@ -88,14 +110,90 @@
     transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  nav#navbar .nav-cta:hover {
+  .nav-cta:hover {
     background: var(--orange-dark);
     transform: translateY(-1px);
     box-shadow: 0 8px 28px rgba(255, 142, 62, 0.3);
   }
 
-  @media (max-width: 640px) {
-    nav#navbar { padding: 1rem 1.5rem; }
-    nav#navbar .hide-mobile { display: none; }
+  /* Hamburger button */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 110;
+  }
+
+  .menu-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--brown);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* Mobile menu overlay */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--beige);
+    z-index: 105;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .mobile-menu:global(.open) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--orange);
+  }
+
+  .mobile-menu .nav-cta {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .mobile-menu {
+      display: flex;
+    }
   }
 </style>

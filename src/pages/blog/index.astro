@@ -1,52 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import { getCollection } from 'astro:content';
+import { formatDate } from '../../utils/format';
 
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-const base = '/tastory-website';
-
-function formatDate(date: Date): string {
-  return date.toLocaleDateString('nl-NL', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Blog — Tastory" description="Lees de laatste artikelen en updates van Tastory. Blijf op de hoogte van onze reis.">
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="section-tag">Blog</div>
-      <h1 class="section-title" style="color: var(--white)">Laatste <em>artikelen</em></h1>
-      <p class="page-hero-desc">Blijf op de hoogte van de laatste ontwikkelingen, inzichten en verhalen van Tastory.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Blog — Tastory"
+  description="Lees de laatste artikelen en updates van Tastory. Blijf op de hoogte van onze reis."
+>
+  <PageHero
+    tag="Blog"
+    title="Laatste <em>artikelen</em>"
+    description="Blijf op de hoogte van de laatste ontwikkelingen, inzichten en verhalen van Tastory."
+  />
 
   <section class="blog-section">
     <div class="blog-grid">
-      {posts.map((post, i) => (
-        <a href={`${base}/blog/${post.slug}`} class="blog-card reveal">
-          <div class="blog-card-date">{formatDate(post.data.date)}</div>
-          <h2 class="blog-card-title">{post.data.title}</h2>
-          <p class="blog-card-desc">{post.data.description}</p>
-          {post.data.tags && (
-            <div class="blog-card-tags">
-              {post.data.tags.map((tag: string) => (
-                <span class="blog-tag">{tag}</span>
-              ))}
-            </div>
-          )}
-          <span class="blog-card-link">Lees meer &rarr;</span>
-        </a>
-      ))}
+      {
+        posts.map((post) => (
+          <a href={`${base}/blog/${post.slug}`} class="blog-card reveal">
+            <div class="blog-card-date">{formatDate(post.data.date)}</div>
+            <h2 class="blog-card-title">{post.data.title}</h2>
+            <p class="blog-card-desc">{post.data.description}</p>
+            {post.data.tags && (
+              <div class="blog-card-tags">
+                {post.data.tags.map((tag: string) => (
+                  <span class="blog-tag">{tag}</span>
+                ))}
+              </div>
+            )}
+            <span class="blog-card-link">Lees meer &rarr;</span>
+          </a>
+        ))
+      }
     </div>
   </section>
-
 </BaseLayout>
 
 <style>
@@ -78,7 +73,7 @@ function formatDate(date: Date): string {
   }
 
   .blog-card-date {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
     margin-bottom: 1rem;
   }
@@ -92,7 +87,7 @@ function formatDate(date: Date): string {
   }
 
   .blog-card-desc {
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
@@ -107,7 +102,7 @@ function formatDate(date: Date): string {
   }
 
   .blog-tag {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     padding: 0.3rem 0.8rem;
     background: rgba(255, 142, 62, 0.08);
     color: var(--orange);
@@ -116,7 +111,7 @@ function formatDate(date: Date): string {
   }
 
   .blog-card-link {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--orange);
     font-weight: 500;
     transition: transform 0.3s;
@@ -127,10 +122,14 @@ function formatDate(date: Date): string {
   }
 
   @media (max-width: 1024px) {
-    .blog-grid { grid-template-columns: 1fr 1fr; }
+    .blog-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 640px) {
-    .blog-grid { grid-template-columns: 1fr; }
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
