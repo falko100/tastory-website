@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Over ons — Tastory" description="Het verhaal van Tastory: passie voor eten en de wens om verhalen samen te brengen.">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">Over ons</div>
+      <h1 class="section-title" style="color: var(--white)">Het verhaal achter <em>Tastory</em></h1>
+      <p class="page-hero-desc">Het verhaal van Tastory is begonnen met een eenvoudige en krachtige gedachte: de passie voor eten en de wens om verhalen samen te brengen.</p>
+    </div>
+  </section>
+
+  <section class="about-mission reveal">
+    <div class="section-tag">Onze missie</div>
+    <h2 class="section-title">De perfecte match tussen restaurant en <em>gast</em></h2>
+    <p class="about-text">Tastory helpt restaurantbezoekers bij het vinden van restaurants die écht bij hun smaak en voorkeuren passen. Het platform transformeert de restaurantkeuze van giswerk naar een weloverwogen keuze door middel van representatieve, authentieke en visueel aantrekkelijke restaurantprofielen.</p>
+    <p class="about-text">Wij geloven dat de beste restaurantervaringen beginnen met de juiste verwachtingen. Daarom bieden wij een platform waarop restaurants zich eerlijk en inspirerend kunnen presenteren, terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.</p>
+  </section>
+
+  <section class="team-section">
+    <div class="reveal">
+      <div class="section-tag">Ons team</div>
+      <h2 class="section-title">De oprichters van <em>Tastory</em></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">S</div>
+        <h3>Steijn Holtkamp</h3>
+        <p class="team-role">Co-founder</p>
+        <p class="team-desc">Gepassioneerd door fotografie en storytelling via food imagery. Steijn zorgt ervoor dat elk restaurant zich visueel op zijn best kan presenteren.</p>
+        <div class="team-contact">
+          <a href="tel:+31640866979">06 40 86 69 79</a>
+          <a href="mailto:Steijn@tastory.nl">Steijn@tastory.nl</a>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">F</div>
+        <h3>Fallon Rillmann</h3>
+        <p class="team-role">Co-founder</p>
+        <p class="team-desc">Gedreven door restaurant discovery en culturele verhalen. Fallon bouwt de brug tussen gasten en de restaurants die écht bij hen passen.</p>
+        <div class="team-contact">
+          <a href="tel:+31624774605">06 24 77 46 05</a>
+          <a href="mailto:Fallon@tastory.nl">Fallon@tastory.nl</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #3a2e22 0%, #4a3828 30%, #5a4232 60%, #3a2e22 100%);
+    padding: 10rem 3rem 5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 252, 248, 0.75);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-mission {
+    text-align: left;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-section {
+    background: var(--white);
+    padding: 7rem 3rem;
+    max-width: 100%;
+  }
+
+  .team-section > .reveal,
+  .team-grid {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .team-card {
+    background: var(--beige);
+    border: 1px solid rgba(136, 101, 69, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--orange), var(--brown));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+  }
+
+  .team-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .team-role {
+    font-size: 1rem;
+    color: var(--orange);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .team-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .team-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .team-contact a {
+    font-size: 1rem;
+    color: var(--brown);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .team-contact a:hover {
+    color: var(--orange);
+  }
+
+  @media (max-width: 768px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .page-hero { padding: 8rem 1.5rem 4rem; }
+  }
+</style>

@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Tastory" description="Neem contact op met Tastory. Wij helpen je graag verder.">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">Contact</div>
+      <h1 class="section-title" style="color: var(--white)"><em>Vragen?</em></h1>
+      <p class="page-hero-desc">Klaar met de ruis en mindere restaurantervaringen? Of je nu als gast zoekt naar actuele en betrouwbare restaurantprofielen of als ondernemer jouw restaurant overtuigend en representatief wilt presenteren: Tastory brengt jullie samen.</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="contact-grid">
+      <div class="contact-form-wrapper reveal">
+        <h2 class="section-title">Stuur ons een <em>bericht</em></h2>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Naam *</label>
+            <input type="text" id="contact-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">E-mailadres *</label>
+            <input type="email" id="contact-email" name="email" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-phone">Telefoonnummer</label>
+              <input type="tel" id="contact-phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="contact-company">Bedrijfsnaam</label>
+              <input type="text" id="contact-company" name="company">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Bericht *</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="contact-callback">Gewenst terugbel moment</label>
+            <input type="text" id="contact-callback" name="callback" placeholder="Bijv. dinsdag tussen 10:00 en 12:00">
+          </div>
+          <button type="submit" class="btn-primary">Verstuur bericht</button>
+          <div class="contact-feedback" id="contact-feedback"></div>
+        </form>
+      </div>
+
+      <div class="contact-info reveal">
+        <div class="info-card">
+          <h3>Adres</h3>
+          <p>Hutteweg 32<br>7071 BV Ulft</p>
+        </div>
+        <div class="info-card">
+          <h3>Openingstijden</h3>
+          <p>Ma&ndash;Vr: 8:00 &ndash; 18:00<br>Za: 10:00 &ndash; 14:00</p>
+        </div>
+        <div class="info-card">
+          <h3>Contact</h3>
+          <p><a href="tel:+31624774605">06 24 77 46 05</a></p>
+          <p><a href="mailto:Info@tastory.nl">Info@tastory.nl</a></p>
+          <p><a href="https://instagram.com/Tastory.app" target="_blank" rel="noopener">Instagram @Tastory.app</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Zakelijk</h3>
+          <p>KVK: 98537733<br>BTW: NL868537883B01</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const feedback = document.getElementById('contact-feedback') as HTMLDivElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const entry = {
+      name: data.get('name'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      company: data.get('company'),
+      message: data.get('message'),
+      callback: data.get('callback'),
+      date: new Date().toISOString(),
+    };
+
+    const stored = JSON.parse(localStorage.getItem('tastory_contact_messages') || '[]');
+    stored.push(entry);
+    localStorage.setItem('tastory_contact_messages', JSON.stringify(stored));
+
+    feedback.textContent = 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.';
+    feedback.className = 'contact-feedback contact-feedback--success';
+    form.reset();
+
+    setTimeout(() => {
+      feedback.textContent = '';
+      feedback.className = 'contact-feedback';
+    }, 5000);
+  });
+</script>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #3a2e22 0%, #4a3828 30%, #5a4232 60%, #3a2e22 100%);
+    padding: 10rem 3rem 5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 252, 248, 0.75);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-content {
+    max-width: 1400px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-family: var(--sans);
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(136, 101, 69, 0.15);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--orange);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-feedback {
+    font-size: 1rem;
+    min-height: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .contact-feedback--success {
+    color: #2e7d32;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid rgba(136, 101, 69, 0.06);
+    border-radius: 16px;
+    padding: 1.8rem;
+  }
+
+  .info-card h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .info-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .info-card a {
+    color: var(--brown);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .info-card a:hover {
+    color: var(--orange);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .page-hero { padding: 8rem 1.5rem 4rem; }
+  }
+</style>
