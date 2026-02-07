@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL;
   <section class="solutions-overview">
     <div class="solutions-grid">
       <a href={`${base}/oplossingen/restaurants`} class="solution-card reveal">
-        <div class="solution-icon"><Icon name="utensils" size={28} /></div>
+        <div class="solution-bg-icon"><Icon name="utensils" size={140} /></div>
         <h2>Voor restaurants</h2>
         <p>
           Vergroot je zichtbaarheid, presenteer je restaurant representatief en realiseer
@@ -47,7 +47,7 @@ const base = import.meta.env.BASE_URL;
       </a>
 
       <a href={`${base}/oplossingen/gebruikers`} class="solution-card reveal">
-        <div class="solution-icon"><Icon name="user" size={28} /></div>
+        <div class="solution-bg-icon"><Icon name="user" size={140} /></div>
         <h2>Voor gebruikers</h2>
         <p>
           Ontdek restaurants die écht bij jou passen. Download de app, proef en deel jouw ervaringen
@@ -95,6 +95,8 @@ const base = import.meta.env.BASE_URL;
     text-decoration: none;
     display: block;
     transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
   }
 
   .solution-card:hover {
@@ -103,17 +105,18 @@ const base = import.meta.env.BASE_URL;
     box-shadow: var(--shadow-lg);
   }
 
-  .solution-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: rgba(255, 142, 62, 0.08);
-    border: 1px solid rgba(255, 142, 62, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .solution-bg-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     color: var(--orange);
-    margin-bottom: 1.5rem;
+    opacity: 0.06;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .solution-card:hover .solution-bg-icon {
+    opacity: 0.1;
   }
 
   .solution-card h2 {

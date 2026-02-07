@@ -11,7 +11,8 @@ import Icon from './Icon.astro';
   </div>
   <div class="problem-grid reveal">
     <div class="problem-card problem">
-      <h3><Icon name="alert-circle" size={20} class="problem-icon" /> Het probleem</h3>
+      <div class="problem-bg-icon"><Icon name="alert-circle" size={120} /></div>
+      <h3>Het probleem</h3>
       <p>
         Heb je moeite met het vinden van het juiste restaurant op verschillende platformen? <span
           class="hl">Verouderde foto's, onbetrouwbare reviews en onoverzichtelijke interfaces</span
@@ -20,7 +21,8 @@ import Icon from './Icon.astro';
       </p>
     </div>
     <div class="problem-card solution">
-      <h3><Icon name="sparkles" size={20} class="solution-icon" /> Tastory biedt de oplossing</h3>
+      <div class="problem-bg-icon"><Icon name="sparkles" size={120} /></div>
+      <h3>Tastory biedt de oplossing</h3>
       <p>
         Via Tastory kunnen restaurants zich <span class="hl">beter en eerlijker presenteren</span>,
         terwijl gebruikers snel en eenvoudig restaurants ontdekken die écht bij hen passen.
@@ -43,6 +45,24 @@ import Icon from './Icon.astro';
   .problem-card {
     padding: 2.5rem;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-bg-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .problem-card.problem .problem-bg-icon {
+    color: var(--brown);
+  }
+
+  .problem-card.solution .problem-bg-icon {
+    color: var(--orange);
   }
 
   .problem-card.problem {
@@ -60,17 +80,6 @@ import Icon from './Icon.astro';
     font-size: 1.3rem;
     color: var(--text);
     margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .problem-card h3 :global(.problem-icon) {
-    color: var(--brown);
-  }
-
-  .problem-card h3 :global(.solution-icon) {
-    color: var(--orange);
   }
 
   .problem-card p {

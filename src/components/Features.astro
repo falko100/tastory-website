@@ -22,8 +22,8 @@ const { features } = Astro.props;
     {
       features.map((feature) => (
         <div class="feature-card reveal">
-          <div class="feature-icon">
-            <Icon name={feature.icon} size={22} />
+          <div class="feature-bg-icon">
+            <Icon name={feature.icon} size={120} />
           </div>
           <h3>{feature.title}</h3>
           <p>{feature.description}</p>
@@ -74,17 +74,18 @@ const { features } = Astro.props;
     opacity: 1;
   }
 
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
-    background: rgba(255, 142, 62, 0.08);
-    border: 1px solid rgba(255, 142, 62, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+  .feature-bg-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     color: var(--orange);
+    opacity: 0.06;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .feature-card:hover .feature-bg-icon {
+    opacity: 0.1;
   }
 
   .feature-card h3 {
