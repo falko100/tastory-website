@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Oplossingen — Tastory" description="Tastory biedt oplossingen voor zowel restaurants als gebruikers. Ontdek hoe wij jullie samenbrengen.">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">Oplossingen</div>
+      <h1 class="section-title" style="color: var(--white)">Oplossingen voor restaurants en <em>gebruikers</em></h1>
+      <p class="page-hero-desc">Tastory brengt restaurants en gasten samen. Ontdek hoe ons platform waarde creëert voor beide kanten.</p>
+    </div>
+  </section>
+
+  <section class="solutions-overview">
+    <div class="solutions-grid">
+      <a href="/tastory-website/oplossingen/restaurants" class="solution-card reveal">
+        <div class="solution-icon">🍽️</div>
+        <h2>Voor restaurants</h2>
+        <p>Vergroot je zichtbaarheid, presenteer je restaurant representatief en realiseer terugkerende gasten via kwalitatieve profielen.</p>
+        <div class="solution-steps">
+          <div class="solution-step">
+            <span class="step-label">Find it</span>
+            <span class="step-desc">Gebruikers ontdekken jouw restaurant via de Tastory app</span>
+          </div>
+          <div class="solution-step">
+            <span class="step-label">Taste it</span>
+            <span class="step-desc">Gebruikers ervaren jouw gerechten en service in het restaurant</span>
+          </div>
+          <div class="solution-step">
+            <span class="step-label">Share it</span>
+            <span class="step-desc">Gebruikers delen waardevolle feedback om de service te optimaliseren</span>
+          </div>
+        </div>
+        <div class="solution-link">Bekijk oplossingen voor restaurants &rarr;</div>
+      </a>
+
+      <a href="/tastory-website/oplossingen/gebruikers" class="solution-card reveal">
+        <div class="solution-icon">👤</div>
+        <h2>Voor gebruikers</h2>
+        <p>Ontdek restaurants die écht bij jou passen. Download de app, proef en deel jouw ervaringen met de community.</p>
+        <div class="solution-steps">
+          <div class="solution-step">
+            <span class="step-label">Find it</span>
+            <span class="step-desc">Download de app en ontdek het restaurant dat bij jou past</span>
+          </div>
+          <div class="solution-step">
+            <span class="step-label">Taste it</span>
+            <span class="step-desc">Ga langs en proef de beste gerechten bij jouw gekozen restaurant</span>
+          </div>
+          <div class="solution-step">
+            <span class="step-label">Share it</span>
+            <span class="step-desc">Deel jouw ervaring en help anderen bij hun restaurantkeuze</span>
+          </div>
+        </div>
+        <div class="solution-link">Bekijk oplossingen voor gebruikers &rarr;</div>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, #3a2e22 0%, #4a3828 30%, #5a4232 60%, #3a2e22 100%);
+    padding: 10rem 3rem 5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 252, 248, 0.75);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .solutions-overview {
+    max-width: 1400px;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .solution-card {
+    background: var(--white);
+    border: 1px solid rgba(136, 101, 69, 0.06);
+    border-radius: 20px;
+    padding: 3rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.4s;
+  }
+
+  .solution-card:hover {
+    border-color: rgba(255, 142, 62, 0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(136, 101, 69, 0.08);
+  }
+
+  .solution-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .solution-card h2 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .solution-card > p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .solution-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .solution-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--orange);
+  }
+
+  .step-label {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--orange);
+    font-style: italic;
+  }
+
+  .step-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .solution-link {
+    font-size: 1rem;
+    color: var(--orange);
+    font-weight: 500;
+    transition: transform 0.3s;
+  }
+
+  .solution-card:hover .solution-link {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .solutions-grid { grid-template-columns: 1fr; }
+    .page-hero { padding: 8rem 1.5rem 4rem; }
+  }
+</style>
