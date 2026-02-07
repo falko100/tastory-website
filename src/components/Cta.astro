@@ -1,0 +1,117 @@
+---
+---
+
+<section class="cta-section" id="download">
+  <div class="cta-inner reveal">
+    <div class="section-tag" style="justify-content:center">Blijf op de hoogte</div>
+    <h2>Klaar om restaurants in een <em>nieuw licht</em> te zien?</h2>
+    <p>Op de hoogte blijven van alle Tastory nieuws? Meld je aan voor de nieuwsbrief en ontvang updates over de lancering van onze app!</p>
+    <form class="email-form" action="#" method="post">
+      <input type="email" placeholder="Jouw e-mailadres" required>
+      <button type="submit">Aanmelden</button>
+    </form>
+    <div class="cta-note">Geen spam. Altijd opzegbaar. Binnenkort beschikbaar op iOS & Android.</div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative;
+    background: var(--beige);
+    max-width: 100%;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255, 142, 62, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .cta-inner h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-inner h2 em {
+    color: var(--orange);
+    font-style: italic;
+  }
+
+  .cta-inner > p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .email-form {
+    display: flex;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(136, 101, 69, 0.15);
+    border-radius: 100px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(136, 101, 69, 0.06);
+  }
+
+  .email-form input {
+    flex: 1;
+    padding: 1rem 1.8rem;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    outline: none;
+  }
+
+  .email-form input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .email-form button {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+    border-radius: 0 100px 100px 0;
+  }
+
+  .email-form button:hover { background: var(--orange-dark); }
+
+  .cta-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .email-form { flex-direction: column; border-radius: 16px; }
+    .email-form button { width: 100%; border-radius: 0 0 16px 16px; }
+  }
+</style>

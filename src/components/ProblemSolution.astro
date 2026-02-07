@@ -1,0 +1,65 @@
+---
+---
+
+<section id="oplossingen">
+  <div class="reveal">
+    <div class="section-tag">Het Probleem & de Oplossing</div>
+    <div class="section-title">Betere zichtbaarheid voor restaurants.<br>Betere keuzes voor <em>gasten.</em></div>
+  </div>
+  <div class="problem-grid reveal">
+    <div class="problem-card problem">
+      <h3>😤 Het probleem</h3>
+      <p>Heb je moeite met het vinden van het juiste restaurant op verschillende platformen? <span class="hl">Verouderde foto's, onbetrouwbare reviews en onoverzichtelijke interfaces</span> geven geen representatief beeld van een restaurant. Het maakt de keuze voor het juiste restaurant onnodig lastig.</p>
+    </div>
+    <div class="problem-card solution">
+      <h3>✨ Tastory biedt dé oplossing</h3>
+      <p>Via Tastory kunnen restaurants zich <span class="hl">beter en eerlijker presenteren</span>, terwijl gebruikers snel en eenvoudig restaurants ontdekken die écht bij hen passen. Kwalitatieve videocontent laat zien waar een restaurant echt voor staat — <span class="hl">authentiek, representatief en inspirerend.</span></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .problem-card {
+    padding: 2.5rem;
+    border-radius: 20px;
+  }
+
+  .problem-card.problem {
+    background: rgba(136, 101, 69, 0.04);
+    border: 1px solid rgba(136, 101, 69, 0.1);
+  }
+
+  .problem-card.solution {
+    background: rgba(255, 142, 62, 0.04);
+    border: 1px solid rgba(255, 142, 62, 0.12);
+  }
+
+  .problem-card h3 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+  }
+
+  .problem-card p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  .problem-card .hl {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+    .problem-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+</style>

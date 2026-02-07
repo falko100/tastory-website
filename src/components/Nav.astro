@@ -1,0 +1,80 @@
+---
+---
+
+<nav id="navbar">
+  <div class="logo">Tastory</div>
+  <ul class="nav-links">
+    <li><a href="#oplossingen" class="hide-mobile">Oplossingen</a></li>
+    <li><a href="#hoogtepunten" class="hide-mobile">Hoogtepunten</a></li>
+    <li><a href="#contact" class="hide-mobile">Contact</a></li>
+    <li><a href="#download" class="nav-cta">Download de App</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(24px);
+    background: rgba(245, 235, 221, 0.8);
+    border-bottom: 1px solid rgba(136, 101, 69, 0.08);
+    animation: fadeDown 0.8s ease both;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+
+  nav :global(.scrolled) {
+    background: rgba(245, 235, 221, 0.95);
+    box-shadow: 0 4px 30px rgba(136, 101, 69, 0.06);
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    color: var(--brown);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-weight: 400;
+  }
+
+  .nav-links a:hover { color: var(--orange); }
+
+  .nav-cta {
+    background: var(--orange) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 100px;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--orange-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(255, 142, 62, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.5rem; }
+    .hide-mobile { display: none; }
+  }
+</style>
