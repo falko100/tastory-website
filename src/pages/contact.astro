@@ -51,7 +51,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="contact-info reveal">
         <div class="info-card">
           <h3>Adres</h3>
-          <p>Hutteweg 32<br>7071 BV Ulft</p>
+          <p>Klooster Dolphia<br>Gronausestraat 710<br>7534 AM Enschede</p>
         </div>
         <div class="info-card">
           <h3>Openingstijden</h3>
@@ -76,27 +76,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const feedback = document.getElementById('contact-feedback') as HTMLDivElement;
+  const submitBtn = form.querySelector('button') as HTMLButtonElement;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    const entry = {
-      name: data.get('name'),
-      email: data.get('email'),
-      phone: data.get('phone'),
-      company: data.get('company'),
-      message: data.get('message'),
-      callback: data.get('callback'),
-      date: new Date().toISOString(),
-    };
 
-    const stored = JSON.parse(localStorage.getItem('tastory_contact_messages') || '[]');
-    stored.push(entry);
-    localStorage.setItem('tastory_contact_messages', JSON.stringify(stored));
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Verzenden...';
 
-    feedback.textContent = 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.';
-    feedback.className = 'contact-feedback contact-feedback--success';
-    form.reset();
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/Info@tastory.nl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          company: data.get('company'),
+          message: data.get('message'),
+          callback: data.get('callback'),
+          _subject: 'Nieuw contactbericht — Tastory website',
+        }),
+      });
+
+      if (res.ok) {
+        feedback.textContent = 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.';
+        feedback.className = 'contact-feedback contact-feedback--success';
+        form.reset();
+      } else {
+        throw new Error('Submit failed');
+      }
+    } catch {
+      feedback.textContent = 'Er ging iets mis. Probeer het later opnieuw.';
+      feedback.className = 'contact-feedback contact-feedback--error';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Verstuur bericht';
 
     setTimeout(() => {
       feedback.textContent = '';
@@ -171,6 +188,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .contact-feedback--success {
     color: #2e7d32;
+  }
+
+  .contact-feedback--error {
+    color: #c62828;
   }
 
   .contact-info {
