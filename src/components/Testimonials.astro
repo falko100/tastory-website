@@ -1,0 +1,103 @@
+---
+interface Props {
+  testimonials: { quote: string; author: string }[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<div class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="reveal">
+      <div class="section-tag">Gebruikers</div>
+      <div class="section-title">Wat toekomstige gebruikers over <em>Tastory</em> zeggen</div>
+    </div>
+    <div class="testimonials-grid">
+      {testimonials.map((t) => (
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">{t.quote}</p>
+          <div class="testimonial-author">{t.author}</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonials-section {
+    background: var(--white);
+    padding: 7rem 3rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .testimonials-section::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 20rem;
+    color: rgba(255, 142, 62, 0.04);
+    position: absolute;
+    top: -3rem; left: 5%;
+    line-height: 1;
+  }
+
+  .testimonials-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial-card {
+    background: var(--beige);
+    border: 1px solid rgba(136, 101, 69, 0.06);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 3rem;
+    color: rgba(255, 142, 62, 0.2);
+    position: absolute;
+    top: 0.8rem; left: 1.5rem;
+    line-height: 1;
+  }
+
+  .testimonial-quote {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--brown);
+  }
+
+  .testimonial-stars {
+    color: var(--orange);
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>
