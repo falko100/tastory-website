@@ -3,7 +3,9 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <nav id="navbar" aria-label="Hoofdnavigatie">
-  <a href={`${base}/`} class="logo">Tastory</a>
+  <a href={`${base}/`} class="logo">
+    <img src={`${base}/tastory-logo-header.png`} alt="Tastory" class="logo-img" />
+  </a>
   <ul class="nav-links">
     <li><a href={`${base}/oplossingen`}>Oplossingen</a></li>
     <li><a href={`${base}/over-ons`}>Over ons</a></li>
@@ -64,12 +66,15 @@ const base = import.meta.env.BASE_URL;
   }
 
   .logo {
-    font-family: var(--serif);
-    font-size: 1.7rem;
-    color: var(--brown);
-    letter-spacing: 0.01em;
     text-decoration: none;
     z-index: 102;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 36px;
+    width: auto;
   }
 
   .nav-links {
