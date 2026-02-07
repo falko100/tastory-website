@@ -23,11 +23,13 @@ html {
   scroll-behavior: smooth;
   background: var(--beige);
   color: var(--text);
+  font-size: 16px;
 }
 
 body {
   font-family: var(--sans);
   font-weight: 300;
+  font-size: 1rem;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -52,8 +54,8 @@ section {
 }
 
 .section-tag {
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
   margin-bottom: 1rem;
@@ -85,7 +87,7 @@ section {
 }
 
 .section-desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-muted);
   max-width: 560px;
@@ -97,9 +99,9 @@ section {
   color: var(--white);
   padding: 1rem 2.5rem;
   font-family: var(--sans);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   border: none;
   cursor: pointer;
   transition: all 0.3s;
@@ -117,8 +119,8 @@ section {
 .btn-secondary {
   color: rgba(255, 252, 248, 0.85);
   font-family: var(--sans);
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);

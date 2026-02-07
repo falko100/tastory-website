@@ -2,17 +2,7 @@
 ---
 
 <section class="hero">
-  <div class="hero-video-bg">
-    <iframe
-      src="https://www.youtube.com/embed/jbv-DdTNohI?autoplay=1&mute=1&loop=1&playlist=jbv-DdTNohI&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      title="Tastory background video"
-      loading="lazy"
-    ></iframe>
-  </div>
-  <div class="hero-video-overlay"></div>
+  <div class="hero-bg"></div>
 
   <div class="hero-content">
     <div class="hero-text">
@@ -34,23 +24,30 @@
           <div class="phone-screen">
             <div class="phone-feed">
               <div class="phone-video-area">
-                <div class="phone-plate-circle"></div>
-                <div class="phone-play-btn"></div>
+                <iframe
+                  class="phone-video-iframe"
+                  src="https://www.youtube.com/embed/jbv-DdTNohI?autoplay=1&mute=1&loop=1&playlist=jbv-DdTNohI&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  title="Tastory video"
+                  loading="lazy"
+                ></iframe>
                 <div class="phone-sidebar">
                   <div>
-                    <div class="phone-sidebar-icon">♡</div>
+                    <div class="phone-sidebar-icon">&hearts;</div>
                     <div class="phone-sidebar-label">2.4K</div>
                   </div>
                   <div>
-                    <div class="phone-sidebar-icon">💬</div>
+                    <div class="phone-sidebar-icon">&#x1F4AC;</div>
                     <div class="phone-sidebar-label">186</div>
                   </div>
                   <div>
-                    <div class="phone-sidebar-icon">↗</div>
+                    <div class="phone-sidebar-icon">&nearr;</div>
                     <div class="phone-sidebar-label">Deel</div>
                   </div>
                   <div>
-                    <div class="phone-sidebar-icon">🔖</div>
+                    <div class="phone-sidebar-icon">&#x1F516;</div>
                     <div class="phone-sidebar-label">Bewaar</div>
                   </div>
                 </div>
@@ -58,11 +55,11 @@
                   <div class="phone-user-row">
                     <div class="phone-avatar">R</div>
                     <span class="phone-username">Restaurant De Librije</span>
-                    <span class="phone-verified">✓</span>
+                    <span class="phone-verified">&#x2713;</span>
                   </div>
                   <div class="phone-caption">Winter Tasting — Zeven Gangen Beleving</div>
                   <div class="phone-meta">
-                    <span>🎬 4K</span>
+                    <span>&#x1F3AC; 4K</span>
                     <span>&bull;</span>
                     <span>12:40</span>
                     <span>&bull;</span>
@@ -76,8 +73,8 @@
         <div class="float-card float-card-1">
           <div class="fc-label">Beoordeling</div>
           <div class="fc-row">
-            <span class="fc-stars">★★★★★</span>
-            <span class="fc-value" style="font-size:0.85rem; margin-left:0.2rem">4.96</span>
+            <span class="fc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="fc-value fc-value-sm">4.96</span>
           </div>
         </div>
         <div class="float-card float-card-2">
@@ -104,44 +101,24 @@
     padding: 8rem 3rem 4rem;
   }
 
-  .hero-video-bg {
+  .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    overflow: hidden;
-  }
-
-  .hero-video-bg iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 180vw;
-    height: 180vh;
-    min-width: 180vw;
-    min-height: 180vh;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .hero-video-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
     background:
-      linear-gradient(180deg,
-        rgba(58, 46, 34, 0.55) 0%,
-        rgba(58, 46, 34, 0.4) 40%,
-        rgba(58, 46, 34, 0.6) 80%,
-        rgba(58, 46, 34, 0.85) 100%
+      linear-gradient(160deg,
+        #3a2e22 0%,
+        #4a3828 30%,
+        #5a4232 60%,
+        #3a2e22 100%
       );
   }
 
-  .hero-video-overlay::after {
+  .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(136, 101, 69, 0.1);
-    mix-blend-mode: multiply;
+    background: radial-gradient(ellipse at 70% 50%, rgba(255, 142, 62, 0.08) 0%, transparent 60%);
   }
 
   .hero-content {
@@ -166,9 +143,9 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 142, 62, 0.3);
     border-radius: 100px;
-    padding: 0.4rem 1.2rem 0.4rem 0.6rem;
+    padding: 0.5rem 1.4rem 0.5rem 0.8rem;
     margin-bottom: 1.8rem;
-    font-size: 0.72rem;
+    font-size: 1rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--orange-light);
@@ -198,7 +175,7 @@
   }
 
   .hero-desc {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: rgba(255, 252, 248, 0.8);
     max-width: 500px;
@@ -222,8 +199,8 @@
   .phone-wrapper { position: relative; }
 
   .phone-mockup {
-    width: 270px;
-    height: 560px;
+    width: 280px;
+    height: 580px;
     background: #1a1714;
     border-radius: 40px;
     border: 3px solid rgba(255, 252, 248, 0.15);
@@ -264,38 +241,15 @@
     background: linear-gradient(160deg, #2a1f12 0%, #1a140a 40%, #18120e 100%);
   }
 
-  .phone-plate-circle {
+  .phone-video-iframe {
     position: absolute;
-    top: 36%; left: 50%;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 100%;
     transform: translate(-50%, -50%);
-    width: 110px; height: 110px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,142,62,0.1) 0%, rgba(245,235,221,0.04) 50%, transparent 70%);
-    border: 1px solid rgba(245,235,221,0.05);
-  }
-
-  .phone-play-btn {
-    position: absolute;
-    top: 36%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background: rgba(255, 142, 62, 0.3);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 142, 62, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: pulse 2.5s ease-in-out infinite;
-  }
-
-  .phone-play-btn::after {
-    content: '';
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 7px 0 7px 12px;
-    border-color: transparent transparent transparent var(--orange);
-    margin-left: 2px;
+    pointer-events: none;
+    border: none;
   }
 
   .phone-sidebar {
@@ -306,6 +260,7 @@
     flex-direction: column;
     gap: 0.9rem;
     align-items: center;
+    z-index: 2;
   }
 
   .phone-sidebar-icon {
@@ -329,6 +284,7 @@
     bottom: 0; left: 0; right: 0;
     padding: 1.1rem;
     background: linear-gradient(transparent, rgba(14,12,10,0.95));
+    z-index: 2;
   }
 
   .phone-user-row {
@@ -379,28 +335,33 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(136, 101, 69, 0.1);
     border-radius: 14px;
-    padding: 0.65rem 0.9rem;
+    padding: 0.75rem 1rem;
     animation: float 6s ease-in-out infinite;
     white-space: nowrap;
     box-shadow: 0 8px 30px rgba(58, 46, 34, 0.12);
   }
 
-  .float-card-1 { top: 10%; right: -38px; animation-delay: 0s; }
-  .float-card-2 { bottom: 16%; left: -32px; animation-delay: 2s; }
-  .float-card-3 { top: 52%; right: -46px; animation-delay: 4s; }
+  .float-card-1 { top: 10%; right: -50px; animation-delay: 0s; }
+  .float-card-2 { bottom: 16%; left: -45px; animation-delay: 2s; }
+  .float-card-3 { top: 52%; right: -60px; animation-delay: 4s; }
 
   .fc-label {
-    font-size: 0.48rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     color: var(--text-muted);
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.15rem;
   }
 
   .fc-value {
     font-family: var(--serif);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--brown);
+  }
+
+  .fc-value-sm {
+    font-size: 1rem;
+    margin-left: 0.2rem;
   }
 
   .fc-row {
@@ -409,7 +370,7 @@
     gap: 0.3rem;
   }
 
-  .fc-stars { color: var(--orange); font-size: 0.65rem; }
+  .fc-stars { color: var(--orange); font-size: 1rem; }
 
   @media (max-width: 1024px) {
     .hero-content { grid-template-columns: 1fr; text-align: center; }

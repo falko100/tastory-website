@@ -6,13 +6,49 @@
     <div class="section-tag" style="justify-content:center">Blijf op de hoogte</div>
     <h2>Klaar om restaurants in een <em>nieuw licht</em> te zien?</h2>
     <p>Op de hoogte blijven van alle Tastory nieuws? Meld je aan voor de nieuwsbrief en ontvang updates over de lancering van onze app!</p>
-    <form class="email-form" action="#" method="post">
-      <input type="email" placeholder="Jouw e-mailadres" required>
+    <form class="email-form" id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Jouw e-mailadres" required aria-label="E-mailadres">
       <button type="submit">Aanmelden</button>
     </form>
-    <div class="cta-note">Geen spam. Altijd opzegbaar. Binnenkort beschikbaar op iOS & Android.</div>
+    <div class="form-feedback" id="form-feedback"></div>
+    <div class="cta-note">Geen spam. Altijd opzegbaar. Binnenkort beschikbaar op iOS &amp; Android.</div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const emailInput = document.getElementById('newsletter-email') as HTMLInputElement;
+  const feedback = document.getElementById('form-feedback') as HTMLDivElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if (!email) return;
+
+    // Store in localStorage
+    const stored = JSON.parse(localStorage.getItem('tastory_subscribers') || '[]');
+    if (stored.includes(email)) {
+      feedback.textContent = 'Dit e-mailadres is al aangemeld!';
+      feedback.className = 'form-feedback form-feedback--info';
+      return;
+    }
+
+    stored.push(email);
+    localStorage.setItem('tastory_subscribers', JSON.stringify(stored));
+
+    // Show success
+    feedback.textContent = 'Bedankt voor je aanmelding! We houden je op de hoogte.';
+    feedback.className = 'form-feedback form-feedback--success';
+    emailInput.value = '';
+
+    // Hide feedback after 5s
+    setTimeout(() => {
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+    }, 5000);
+  });
+</script>
 
 <style>
   .cta-section {
@@ -54,7 +90,7 @@
   }
 
   .cta-inner > p {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 2.5rem;
@@ -62,7 +98,7 @@
 
   .email-form {
     display: flex;
-    max-width: 480px;
+    max-width: 520px;
     margin: 0 auto;
     border: 1px solid rgba(136, 101, 69, 0.15);
     border-radius: 100px;
@@ -78,7 +114,7 @@
     border: none;
     color: var(--text);
     font-family: var(--sans);
-    font-size: 0.88rem;
+    font-size: 1rem;
     outline: none;
   }
 
@@ -93,7 +129,7 @@
     border: none;
     padding: 1rem 2rem;
     font-family: var(--sans);
-    font-size: 0.78rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s;
@@ -103,10 +139,25 @@
 
   .email-form button:hover { background: var(--orange-dark); }
 
+  .form-feedback {
+    font-size: 1rem;
+    margin-top: 1rem;
+    min-height: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .form-feedback--success {
+    color: #2e7d32;
+  }
+
+  .form-feedback--info {
+    color: var(--orange);
+  }
+
   .cta-note {
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    opacity: 0.5;
+    opacity: 0.6;
     margin-top: 1rem;
   }
 
