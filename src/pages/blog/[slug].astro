@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+type Props = { post: CollectionEntry<'blog'> };
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const base = '/tastory-website';
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('nl-NL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<BaseLayout title={`${post.data.title} — Tastory Blog`} description={post.data.description}>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">Blog</div>
+      <h1 class="section-title" style="color: var(--white)"><em>{post.data.title}</em></h1>
+      <p class="page-hero-desc">{formatDate(post.data.date)}</p>
+    </div>
+  </section>
+
+  <article class="blog-article">
+    <div class="blog-article-inner reveal">
+      {post.data.tags && (
+        <div class="blog-article-tags">
+          {post.data.tags.map((tag: string) => (
+            <span class="blog-tag">{tag}</span>
+          ))}
+        </div>
+      )}
+      <div class="blog-content">
+        <Content />
+      </div>
+      <div class="blog-back">
+        <a href={`${base}/blog`} class="btn-secondary-light">&larr; Terug naar alle artikelen</a>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .blog-article {
+    max-width: 1400px;
+  }
+
+  .blog-article-inner {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  .blog-article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-tag {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 142, 62, 0.08);
+    color: var(--orange);
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+  }
+
+  .blog-content {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+  }
+
+  .blog-content :global(h2) {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .blog-content :global(h3) {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content :global(strong) {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .blog-content :global(em) {
+    color: var(--orange);
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .blog-content :global(a) {
+    color: var(--orange);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 142, 62, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.3s;
+  }
+
+  .blog-content :global(a:hover) {
+    text-decoration-color: var(--orange);
+  }
+
+  .blog-back {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(136, 101, 69, 0.08);
+  }
+
+  .btn-secondary-light {
+    color: var(--brown);
+    font-family: var(--sans);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    background: rgba(136, 101, 69, 0.06);
+    border: 1px solid rgba(136, 101, 69, 0.1);
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-secondary-light:hover {
+    background: rgba(136, 101, 69, 0.1);
+    border-color: rgba(136, 101, 69, 0.18);
+    color: var(--text);
+  }
+</style>

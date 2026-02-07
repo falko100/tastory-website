@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = 'De ultieme smaakvolle verbinding tussen gast en restaurant. Ontdek restaurants via kwalitatieve videocontent.' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -18,7 +19,13 @@ const { title, description = 'De ultieme smaakvolle verbinding tussen gast en re
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <meta name="theme-color" content="#F5EBDD">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:locale" content="nl_NL">
+  <link rel="canonical" href={canonicalURL}>
+  <link rel="icon" type="image/svg+xml" href="/tastory-website/favicon.svg">
   <title>{title}</title>
 </head>
 <body>
@@ -33,14 +40,23 @@ const { title, description = 'De ultieme smaakvolle verbinding tussen gast en re
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Nav scroll effect
+    // Nav scroll effect (throttled with rAF)
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 60);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
   </script>
 </body>

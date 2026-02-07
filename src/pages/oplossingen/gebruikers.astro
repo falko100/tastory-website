@@ -86,26 +86,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: linear-gradient(160deg, #3a2e22 0%, #4a3828 30%, #5a4232 60%, #3a2e22 100%);
-    padding: 10rem 3rem 5rem;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .page-hero-inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .page-hero-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 252, 248, 0.75);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
   .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -223,6 +203,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   @media (max-width: 640px) {
     .user-features-grid { grid-template-columns: 1fr; }
-    .page-hero { padding: 8rem 1.5rem 4rem; }
   }
 </style>
