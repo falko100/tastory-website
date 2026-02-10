@@ -1,8 +1,7 @@
 export const stats = [
-  { number: '340+', label: 'Restaurants' },
-  { number: '2.800', label: "Chef-video's" },
-  { number: '4K+', label: 'Filmkwaliteit' },
-  { number: '100%', label: 'No Cure No Pay' },
+  { number: '1', label: 'Restaurant' },
+  { number: '1', label: "Chef-video" },
+  { number: '100%', label: 'Transparant' },
 ];
 
 export const features = [
@@ -38,9 +37,9 @@ export const features = [
   },
   {
     icon: 'tag',
-    title: 'No Cure No Pay',
+    title: 'Doelgroep',
     description:
-      'Gun jouw verhaal een podium zonder risico. Jouw doelgroep is al gebruiker — Tastory werkt op basis van no cure no pay, zodat je alleen betaalt bij resultaat.',
+      'Gun jouw verhaal een podium. Jouw doelgroep is al gebruiker.',
   },
 ];
 
