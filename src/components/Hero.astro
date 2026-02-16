@@ -44,18 +44,9 @@ const base = import.meta.env.BASE_URL;
             />
           </div>
         </div>
-        <div class="float-card float-card-1">
-          <div class="fc-label">Betrouwbare reviews</div>
-          <div class="fc-row">
-            <span class="fc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          </div>
-        </div>
-        <div class="float-card float-card-2">
-          <div class="fc-label">Jouw verhaal</div>
-        </div>
-        <div class="float-card float-card-3">
-          <div class="fc-label">Actuele content</div>
-        </div>
+        <div class="float-card float-card-1">Betrouwbare reviews</div>
+        <div class="float-card float-card-2">Jouw verhaal</div>
+        <div class="float-card float-card-3">Actuele content</div>
       </div>
     </div>
   </div>
@@ -273,9 +264,13 @@ const base = import.meta.env.BASE_URL;
     backdrop-filter: blur(24px);
     border: 1px solid rgba(136, 101, 69, 0.08);
     border-radius: var(--radius-md);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.85rem;
     animation: float 6s ease-in-out infinite;
     white-space: nowrap;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
     box-shadow:
       0 4px 12px rgba(58, 46, 34, 0.06),
       0 12px 40px rgba(58, 46, 34, 0.08);
@@ -295,23 +290,6 @@ const base = import.meta.env.BASE_URL;
     top: 52%;
     right: -60px;
     animation-delay: 4s;
-  }
-
-  .fc-label {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    margin-bottom: 0.15rem;
-  }
-  .fc-row {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-  .fc-stars {
-    color: var(--orange);
-    font-size: 1rem;
   }
 
   @media (max-width: 1024px) {
