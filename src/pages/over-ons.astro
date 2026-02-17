@@ -32,24 +32,6 @@ const base = import.meta.env.BASE_URL;
           terwijl gasten eenvoudig ontdekken waar ze écht op hun plek zijn.
         </p>
       </div>
-      <div class="mission-visual">
-        <div class="mission-card">
-          <div class="mission-stat">
-            <span class="mission-stat-number">1</span>
-            <span class="mission-stat-label">Restaurant aangesloten</span>
-          </div>
-          <div class="mission-divider"></div>
-          <div class="mission-stat">
-            <span class="mission-stat-number">2.800</span>
-            <span class="mission-stat-label">Video's geproduceerd</span>
-          </div>
-          <div class="mission-divider"></div>
-          <div class="mission-stat">
-            <span class="mission-stat-number">100%</span>
-            <span class="mission-stat-label">No Cure No Pay</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -115,10 +97,7 @@ const base = import.meta.env.BASE_URL;
 
 <style>
   .mission-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    max-width: 800px;
   }
 
   .about-text {
@@ -127,39 +106,6 @@ const base = import.meta.env.BASE_URL;
     color: var(--text-muted);
     max-width: 700px;
     margin-bottom: 1.5rem;
-  }
-
-  .mission-card {
-    background: var(--white);
-    border: 1px solid rgba(136, 101, 69, 0.06);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .mission-stat {
-    text-align: center;
-  }
-
-  .mission-stat-number {
-    display: block;
-    font-family: var(--serif);
-    font-size: 2.5rem;
-    color: var(--orange);
-    margin-bottom: 0.3rem;
-  }
-
-  .mission-stat-label {
-    font-size: var(--text-base);
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
-
-  .mission-divider {
-    height: 1px;
-    background: rgba(136, 101, 69, 0.08);
   }
 
   /* Team */
@@ -254,13 +200,6 @@ const base = import.meta.env.BASE_URL;
 
   .team-contact a:hover {
     color: var(--orange);
-  }
-
-  @media (max-width: 1024px) {
-    .mission-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
   }
 
   @media (max-width: 768px) {
