@@ -72,8 +72,8 @@ export const testimonials = [
   },
   {
     quote:
-      'TripAdvisor is onoverzichtelijk. Tastory zorgt ervoor dat ik veel makkelijker het juiste restaurant vind! Daarnaast is het een Nederlands bedrijf wat veel persoonlijker voelt.',
-    author: 'Lisa Jansen',
+      'Vind het heel leuk en mooi vormgegeven. Ik zoek altijd bloggers op als ik ergens lekker wil eten. Dan krijg ik een persoonlijk verhaal. Dat is wat je wilt en niet een of andere ratingssite. Gaaf gedaan.',
+    author: 'Saskia Schipper',
   },
   {
     quote:
