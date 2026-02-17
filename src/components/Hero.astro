@@ -62,7 +62,7 @@ const base = import.meta.env.BASE_URL;
 <style>
   .hero {
     position: relative;
-    height: 180vh;
+    min-height: 100vh;
     max-width: 100%;
     padding: 0;
     margin: 0;
@@ -416,38 +416,48 @@ const base = import.meta.env.BASE_URL;
   const hero = document.getElementById('hero');
 
   if (screenshot && phoneScreen && hero) {
-    const setup = () => {
+    let maxScroll = 0;
+    let ticking = false;
+
+    const calculateDimensions = () => {
       const screenH = phoneScreen.clientHeight;
       const imgH = screenshot.clientHeight;
-      const maxScroll = Math.max(0, imgH - screenH);
-      if (maxScroll === 0) return;
+      maxScroll = Math.max(0, imgH - screenH);
+      // Set hero height so scroll range exactly matches phone content
+      hero.style.height = maxScroll > 0 ? `calc(100vh + ${maxScroll}px)` : '100vh';
+    };
 
-      let ticking = false;
-      const update = () => {
-        // Drive animation by scroll position within the tall hero section
+    const update = () => {
+      if (maxScroll > 0) {
         const heroTop = hero.offsetTop;
-        const scrollRange = hero.offsetHeight - window.innerHeight;
         const scrollWithinHero = Math.max(0, window.scrollY - heroTop);
-        const progress = Math.min(1, Math.max(0, scrollWithinHero / scrollRange));
-
+        const progress = Math.min(1, scrollWithinHero / maxScroll);
         screenshot.style.transform = `translateY(-${progress * maxScroll}px)`;
-        ticking = false;
-      };
+      }
+      ticking = false;
+    };
 
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(update);
-          ticking = true;
-        }
-      });
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    });
 
+    window.addEventListener('resize', () => {
+      calculateDimensions();
+      update();
+    });
+
+    const init = () => {
+      calculateDimensions();
       update();
     };
 
     if (screenshot.complete) {
-      setup();
+      init();
     } else {
-      screenshot.addEventListener('load', setup);
+      screenshot.addEventListener('load', init);
     }
   }
 </script>
