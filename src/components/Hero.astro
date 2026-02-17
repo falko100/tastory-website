@@ -62,16 +62,12 @@ const base = import.meta.env.BASE_URL;
 <style>
   .hero {
     position: relative;
-    height: 300vh;
     max-width: 100%;
     padding: 0;
     margin: 0;
   }
 
   .hero-sticky {
-    position: sticky;
-    top: 0;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,14 +300,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   @media (max-width: 1024px) {
-    .hero {
-      height: auto;
-    }
-
     .hero-sticky {
-      position: relative;
-      height: auto;
-      overflow: hidden;
       padding: 7rem 2rem 4rem;
     }
 
@@ -420,9 +409,8 @@ const base = import.meta.env.BASE_URL;
 <script>
   const screenshot = document.getElementById('phone-screenshot') as HTMLImageElement;
   const phoneScreen = document.getElementById('phone-screen');
-  const hero = document.getElementById('hero');
 
-  if (screenshot && phoneScreen && hero) {
+  if (screenshot && phoneScreen) {
     const setup = () => {
       const screenH = phoneScreen.clientHeight;
       const imgH = screenshot.clientHeight;
@@ -431,18 +419,10 @@ const base = import.meta.env.BASE_URL;
 
       let ticking = false;
       const update = () => {
-        let progress: number;
-
-        if (window.innerWidth > 1024) {
-          // Desktop: drive animation by scroll position within the tall hero
-          const scrollRange = hero.offsetHeight - window.innerHeight;
-          progress = Math.min(1, Math.max(0, window.scrollY / scrollRange));
-        } else {
-          // Mobile: drive animation by phone position in viewport
-          const rect = phoneScreen.getBoundingClientRect();
-          const viewH = window.innerHeight;
-          progress = Math.min(1, Math.max(0, (viewH - rect.top) / (viewH + rect.height)));
-        }
+        // Drive animation by phone position in viewport
+        const rect = phoneScreen.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        const progress = Math.min(1, Math.max(0, (viewH - rect.top) / (viewH + rect.height)));
 
         screenshot.style.transform = `translateY(-${progress * maxScroll}px)`;
         ticking = false;
