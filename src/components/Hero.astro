@@ -62,12 +62,16 @@ const base = import.meta.env.BASE_URL;
 <style>
   .hero {
     position: relative;
+    height: 180vh;
     max-width: 100%;
     padding: 0;
     margin: 0;
   }
 
   .hero-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -409,8 +413,9 @@ const base = import.meta.env.BASE_URL;
 <script>
   const screenshot = document.getElementById('phone-screenshot') as HTMLImageElement;
   const phoneScreen = document.getElementById('phone-screen');
+  const hero = document.getElementById('hero');
 
-  if (screenshot && phoneScreen) {
+  if (screenshot && phoneScreen && hero) {
     const setup = () => {
       const screenH = phoneScreen.clientHeight;
       const imgH = screenshot.clientHeight;
@@ -419,10 +424,11 @@ const base = import.meta.env.BASE_URL;
 
       let ticking = false;
       const update = () => {
-        // Drive animation by phone position in viewport
-        const rect = phoneScreen.getBoundingClientRect();
-        const viewH = window.innerHeight;
-        const progress = Math.min(1, Math.max(0, (viewH - rect.top) / (viewH + rect.height)));
+        // Drive animation by scroll position within the tall hero section
+        const heroTop = hero.offsetTop;
+        const scrollRange = hero.offsetHeight - window.innerHeight;
+        const scrollWithinHero = Math.max(0, window.scrollY - heroTop);
+        const progress = Math.min(1, Math.max(0, scrollWithinHero / scrollRange));
 
         screenshot.style.transform = `translateY(-${progress * maxScroll}px)`;
         ticking = false;
