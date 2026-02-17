@@ -62,18 +62,10 @@ const base = import.meta.env.BASE_URL;
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
+    height: 300vh;
     max-width: 100%;
     padding: 0;
     margin: 0;
-    background: linear-gradient(
-      160deg,
-      #2e2318 0%,
-      #3d2f1f 25%,
-      #4a3828 50%,
-      #3a2e22 75%,
-      #2e2318 100%
-    );
   }
 
   .hero-sticky {
@@ -313,15 +305,14 @@ const base = import.meta.env.BASE_URL;
 
   @media (max-width: 1024px) {
     .hero {
-      min-height: auto;
+      height: auto;
     }
 
     .hero-sticky {
       position: relative;
       height: auto;
-      min-height: 100vh;
+      overflow: visible;
       padding: 7rem 2rem 4rem;
-      align-items: flex-start;
     }
 
     .hero-content {
@@ -398,7 +389,6 @@ const base = import.meta.env.BASE_URL;
   @media (max-width: 640px) {
     .hero-sticky {
       padding: 6rem 1.5rem 3rem;
-      min-height: auto;
     }
 
     .phone-mockup {
@@ -433,57 +423,44 @@ const base = import.meta.env.BASE_URL;
   const hero = document.getElementById('hero');
 
   if (screenshot && phoneScreen && hero) {
-    let maxScroll = 0;
-    let ticking = false;
-
     const isDesktop = () => window.innerWidth > 1024;
 
-    const calculateDimensions = () => {
-      if (!isDesktop()) {
-        // On mobile: reset any dynamic height and transforms
-        hero.style.height = '';
-        screenshot.style.transform = '';
-        maxScroll = 0;
-        return;
-      }
+    const setup = () => {
+      if (!isDesktop()) return;
+
       const screenH = phoneScreen.clientHeight;
       const imgH = screenshot.clientHeight;
-      maxScroll = Math.max(0, imgH - screenH);
-      // Set hero height so scroll range exactly matches phone content
-      hero.style.height = maxScroll > 0 ? `calc(100vh + ${maxScroll}px)` : '100vh';
-    };
+      const maxScroll = Math.max(0, imgH - screenH);
+      if (maxScroll === 0) return;
 
-    const update = () => {
-      if (maxScroll > 0 && isDesktop()) {
-        const heroTop = hero.offsetTop;
-        const scrollWithinHero = Math.max(0, window.scrollY - heroTop);
-        const progress = Math.min(1, scrollWithinHero / maxScroll);
+      const scrollRange = hero.offsetHeight - window.innerHeight;
+
+      let ticking = false;
+      const update = () => {
+        if (!isDesktop()) {
+          screenshot.style.transform = '';
+          return;
+        }
+        const scrolled = window.scrollY;
+        const progress = Math.min(1, Math.max(0, scrolled / scrollRange));
         screenshot.style.transform = `translateY(-${progress * maxScroll}px)`;
-      }
-      ticking = false;
-    };
+        ticking = false;
+      };
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    });
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      });
 
-    window.addEventListener('resize', () => {
-      calculateDimensions();
-      update();
-    });
-
-    const init = () => {
-      calculateDimensions();
       update();
     };
 
     if (screenshot.complete) {
-      init();
+      setup();
     } else {
-      screenshot.addEventListener('load', init);
+      screenshot.addEventListener('load', setup);
     }
   }
 </script>
