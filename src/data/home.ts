@@ -1,6 +1,5 @@
 export const stats = [
   { number: '1', label: 'Restaurant' },
-  { number: '1', label: "Chef-video" },
   { number: '100%', label: 'Transparant' },
 ];
 
