@@ -266,16 +266,17 @@ const base = import.meta.env.BASE_URL;
   /* Float cards */
   .float-card {
     position: absolute;
-    background: rgba(255, 252, 248, 0.92);
+    background: rgba(255, 252, 248, 0.95);
     backdrop-filter: blur(24px);
-    border: 1px solid rgba(136, 101, 69, 0.08);
+    border: 1.5px solid rgba(255, 142, 62, 0.35);
     border-radius: var(--radius-sm);
     padding: 0.4rem 0.75rem;
     animation: float 6s ease-in-out infinite;
     white-space: nowrap;
     box-shadow:
-      0 4px 12px rgba(58, 46, 34, 0.06),
-      0 12px 40px rgba(58, 46, 34, 0.08);
+      0 4px 12px rgba(58, 46, 34, 0.08),
+      0 12px 40px rgba(58, 46, 34, 0.1),
+      0 0 0 1px rgba(255, 142, 62, 0.08);
   }
 
   .float-card-1 {
@@ -298,7 +299,8 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--text-muted);
+    color: var(--text);
+    font-weight: 500;
   }
 
   @media (max-width: 1024px) {
@@ -351,7 +353,34 @@ const base = import.meta.env.BASE_URL;
     }
 
     .float-card {
-      display: none;
+      position: absolute;
+      padding: 0.3rem 0.6rem;
+      animation-name: float-sm;
+    }
+
+    .fc-label {
+      font-size: 0.65rem;
+    }
+
+    .float-card-1 {
+      top: -8px;
+      right: -10px;
+      left: auto;
+      bottom: auto;
+    }
+
+    .float-card-2 {
+      bottom: -8px;
+      left: -10px;
+      top: auto;
+      right: auto;
+    }
+
+    .float-card-3 {
+      top: 45%;
+      right: auto;
+      left: -18px;
+      bottom: auto;
     }
   }
 
@@ -374,6 +403,28 @@ const base = import.meta.env.BASE_URL;
 
     .phone-screen {
       border-radius: 32px;
+    }
+
+    .float-card {
+      padding: 0.25rem 0.5rem;
+    }
+
+    .fc-label {
+      font-size: 0.6rem;
+    }
+
+    .float-card-1 {
+      top: -6px;
+      right: -6px;
+    }
+
+    .float-card-2 {
+      bottom: -6px;
+      left: -6px;
+    }
+
+    .float-card-3 {
+      left: -14px;
     }
   }
 </style>
