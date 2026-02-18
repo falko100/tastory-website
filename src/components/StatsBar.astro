@@ -7,22 +7,24 @@ const { stats } = Astro.props;
 ---
 
 <div class="stats-bar">
-  <div class="stats-intro">
-    <span class="stats-intro-text">Wist je dat</span>
-    <svg class="stats-intro-arrow" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <line x1="0" y1="10" x2="68" y2="10" stroke="currentColor" stroke-width="1.5"/>
-      <polyline points="58,2 70,10 58,18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="stats-inner">
-    {
-      stats.map((stat) => (
-        <div class="stat">
-          <div class="stat-number">{stat.number}</div>
-          <div class="stat-label">{stat.label}</div>
-        </div>
-      ))
-    }
+  <div class="stats-wrapper">
+    <div class="stats-intro">
+      <span class="stats-intro-text">Wist je dat</span>
+      <svg class="stats-intro-arrow" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="0" y1="10" x2="68" y2="10" stroke="currentColor" stroke-width="1.5"/>
+        <polyline points="58,2 70,10 58,18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="stats-inner">
+      {
+        stats.map((stat) => (
+          <div class="stat">
+            <div class="stat-number">{stat.number}</div>
+            <div class="stat-label">{stat.label}</div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>
 
@@ -34,13 +36,22 @@ const { stats } = Astro.props;
     background: var(--white);
   }
 
-  .stats-intro {
+  .stats-wrapper {
     max-width: 1200px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    color: var(--orange);
+    gap: 3rem;
+  }
+
+  .stats-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    padding-right: 3rem;
+    border-right: 1px solid rgba(136, 101, 69, 0.15);
   }
 
   .stats-intro-text {
@@ -60,8 +71,7 @@ const { stats } = Astro.props;
   }
 
   .stats-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -99,7 +109,24 @@ const { stats } = Astro.props;
   }
 
   @media (max-width: 1024px) {
+    .stats-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .stats-intro {
+      flex-direction: row;
+      align-items: center;
+      padding-right: 0;
+      padding-bottom: 1.5rem;
+      border-right: none;
+      border-bottom: 1px solid rgba(136, 101, 69, 0.15);
+      width: 100%;
+    }
+
     .stats-inner {
+      width: 100%;
       grid-template-columns: repeat(2, 1fr);
     }
   }
