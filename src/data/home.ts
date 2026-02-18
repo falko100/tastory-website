@@ -1,6 +1,9 @@
 export const stats = [
-  { number: '1', label: 'Restaurant' },
+  { number: 'Hét', label: 'restaurant dat bij jou past' },
   { number: '100%', label: 'Transparant' },
+  { number: '69%', label: 'kiest op basis van reviews' },
+  { number: '72%', label: "kiest op basis van foto's" },
+  { number: '80%', label: "van de gasten komen door 'in de buurt' te zoeken" },
 ];
 
 export const features = [
