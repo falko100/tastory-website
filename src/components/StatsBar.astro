@@ -181,10 +181,15 @@ const { stats } = Astro.props;
   }
 
   @media (max-width: 1024px) {
+    .stats-bar,
+    .solution-bar {
+      padding: 2.5rem 1.5rem;
+    }
+
     .stats-wrapper {
       flex-direction: column;
       align-items: flex-start;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .stats-intro {
@@ -200,24 +205,45 @@ const { stats } = Astro.props;
     .stats-inner {
       width: 100%;
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
 
     .solution-inner {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .solution-item {
+      justify-content: flex-start;
+    }
   }
 
   @media (max-width: 640px) {
+    .stats-bar,
+    .solution-bar {
+      padding: 2rem 1.25rem;
+    }
+
     .stats-inner {
       grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
     }
 
     .solution-inner {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .solution-item {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
   }
 </style>
