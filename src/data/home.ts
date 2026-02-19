@@ -1,5 +1,5 @@
 export const stats = [
-  { number: '58%', label: "van de gasten maakt foto's van het eten waar niks meer mee gebeurt" },
+  { number: '58%', label: "van de gasten fotografeert hun eten, maar deelt of gebruikt de foto's niet" },
   { number: '69%', label: 'kiest op basis van reviews van anderen' },
   { number: '75%', label: 'kiest op basis van de beste foto\'s' },
   { number: '80%', label: "van de gasten komen door 'in de buurt' te zoeken" },
