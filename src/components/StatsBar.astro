@@ -234,18 +234,32 @@ const { stats } = Astro.props;
       padding: 2rem 1.25rem;
     }
 
+    .stats-intro-text::after {
+      content: ' ↓';
+    }
+
     .stats-inner {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      text-align: left;
     }
 
     .stat-number {
       font-size: 2rem;
+      flex-shrink: 0;
     }
 
     .stat-label {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       letter-spacing: 0.06em;
+      margin-top: 0;
     }
 
     .solution-inner {
