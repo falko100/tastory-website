@@ -200,6 +200,17 @@ const { stats } = Astro.props;
       border-right: none;
       border-bottom: 1px solid rgba(136, 101, 69, 0.15);
       width: 100%;
+      gap: 0.5rem;
+    }
+
+    .stats-intro-arrow {
+      display: none;
+    }
+
+    .stats-intro-text::after {
+      content: ' →';
+      font-style: normal;
+      color: var(--orange);
     }
 
     .stats-inner {
