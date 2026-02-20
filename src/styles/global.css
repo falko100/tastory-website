@@ -110,7 +110,7 @@ body::after {
 
 /* Section defaults */
 section {
-  padding: 8rem 3rem;
+  padding: 5rem 3rem;
   max-width: 1400px;
   margin: 0 auto;
 }
