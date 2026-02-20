@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Portfolio — Tastory"
+  description="Bekijk ons werk: foto's en video's die wij voor restaurants hebben gemaakt."
+>
+  <PageHero
+    tag="Portfolio"
+    title="Ons <em>werk</em> in beeld"
+    description="Kwalitatieve videocontent en fotografie die restaurants op hun best laten zien. Hier vind je een selectie van wat wij voor onze klanten hebben gemaakt."
+  />
+
+  <section class="portfolio-section">
+    <div class="container">
+      <div class="section-label reveal">Video</div>
+
+      <div class="video-block reveal">
+        <div class="video-wrapper">
+          <!-- Vervang de src met de echte video-URL of embed-code -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Tastory — restaurantvideo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="video-caption">Voorbeeld restaurantvideo — meer volgt binnenkort.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .portfolio-section {
+    padding: 6rem 3rem 10rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: var(--text-xs);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .video-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--brown);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-caption {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-section {
+      padding: 4rem 1.5rem 6rem;
+    }
+  }
+</style>
