@@ -43,7 +43,10 @@ const base = import.meta.env.BASE_URL;
             >
           </div>
         </div>
-        <div class="solution-link">Bekijk oplossingen voor restaurants &rarr;</div>
+        <div class="solution-cta">
+          <span>Bekijk oplossingen voor restaurants</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
       </a>
 
       <a href={`${base}/oplossingen/gebruikers`} class="solution-card reveal">
@@ -70,7 +73,10 @@ const base = import.meta.env.BASE_URL;
             >
           </div>
         </div>
-        <div class="solution-link">Bekijk oplossingen voor gebruikers &rarr;</div>
+        <div class="solution-cta">
+          <span>Bekijk oplossingen voor gebruikers</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
       </a>
     </div>
   </section>
@@ -161,15 +167,22 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.5;
   }
 
-  .solution-link {
+  .solution-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--orange);
+    color: var(--white);
     font-size: var(--text-base);
-    color: var(--orange);
-    font-weight: 500;
-    transition: transform 0.3s;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    transition: background 0.3s, transform 0.3s, gap 0.3s;
   }
 
-  .solution-card:hover .solution-link {
-    transform: translateX(4px);
+  .solution-card:hover .solution-cta {
+    background: var(--brown);
+    gap: 0.75rem;
   }
 
   @media (max-width: 768px) {
