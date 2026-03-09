@@ -7,7 +7,13 @@ const base = import.meta.env.BASE_URL;
     <img src={`${base}/tastory-logo-header.png`} alt="Tastory" class="logo-img" />
   </a>
   <ul class="nav-links">
-    <li><a href={`${base}/oplossingen`}>Oplossingen</a></li>
+    <li class="has-dropdown">
+      <a href={`${base}/oplossingen`}>Oplossingen</a>
+      <ul class="dropdown">
+        <li><a href={`${base}/oplossingen/restaurants`}>Voor restaurants</a></li>
+        <li><a href={`${base}/oplossingen/gebruikers`}>Voor gebruikers</a></li>
+      </ul>
+    </li>
     <li><a href={`${base}/over-ons`}>Over ons</a></li>
     <li><a href={`${base}/portfolio`}>Portfolio</a></li>
     <li><a href={`${base}/blog`}>Blog</a></li>
@@ -33,6 +39,10 @@ const base = import.meta.env.BASE_URL;
   <div class="mobile-menu-inner">
     <span class="mobile-menu-label">Menu</span>
     <a href={`${base}/oplossingen`}>Oplossingen</a>
+    <div class="mobile-submenu">
+      <a href={`${base}/oplossingen/restaurants`} class="mobile-submenu-link">Voor restaurants</a>
+      <a href={`${base}/oplossingen/gebruikers`} class="mobile-submenu-link">Voor gebruikers</a>
+    </div>
     <a href={`${base}/over-ons`}>Over ons</a>
     <a href={`${base}/portfolio`}>Portfolio</a>
     <a href={`${base}/blog`}>Blog</a>
@@ -114,6 +124,58 @@ const base = import.meta.env.BASE_URL;
 
   .nav-links a:not(.nav-cta):hover::after {
     width: 100%;
+  }
+
+  /* Dropdown */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .dropdown {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border: 1px solid rgba(136, 101, 69, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: 0 16px 48px rgba(136, 101, 69, 0.12);
+    min-width: 200px;
+    padding: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    font-size: var(--text-sm);
+    color: var(--text) !important;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .dropdown li a::after {
+    display: none !important;
+  }
+
+  .dropdown li a:hover {
+    background: var(--beige);
+    color: var(--orange) !important;
   }
 
   .nav-cta {
@@ -248,6 +310,26 @@ const base = import.meta.env.BASE_URL;
 
   .mobile-menu a:not(.nav-cta):hover {
     color: var(--orange);
+  }
+
+  .mobile-submenu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(255, 142, 62, 0.3);
+    margin: -0.2rem 0 0.4rem;
+    gap: 0;
+  }
+
+  .mobile-submenu-link {
+    font-family: var(--sans) !important;
+    font-size: var(--text-base) !important;
+    color: var(--text-muted) !important;
+    padding: 0.4rem 0 !important;
+  }
+
+  .mobile-submenu-link:hover {
+    color: var(--orange) !important;
   }
 
   .mobile-menu-divider {
