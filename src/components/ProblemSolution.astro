@@ -6,7 +6,7 @@ import Icon from './Icon.astro';
   <div class="reveal">
     <div class="section-tag">Het Probleem & de Oplossing</div>
     <div class="section-title">
-      Betere zichtbaarheid voor restaurants.<br />Betere keuzes voor <em>gasten.</em>
+      Betere zichtbaarheid voor <em>restaurants.</em><br />Betere keuzes voor <em>gasten.</em>
     </div>
   </div>
   <div class="problem-grid">
@@ -14,9 +14,9 @@ import Icon from './Icon.astro';
       <div class="problem-bg-icon"><Icon name="alert-circle" size={120} /></div>
       <h3>Het probleem</h3>
       <p>
-        Heb je moeite met het vinden van het juiste restaurant op verschillende platformen? <span
+        Heb je ook last van <span
           class="hl">Verouderde foto's, onbetrouwbare reviews en onoverzichtelijke interfaces</span
-        > geven geen representatief beeld van een restaurant. Het maakt de keuze voor het juiste restaurant
+        >? Ze geven geen representatief beeld van een restaurant. Het maakt de keuze voor het juiste restaurant
         onnodig lastig.
       </p>
     </div>
@@ -25,8 +25,8 @@ import Icon from './Icon.astro';
       <h3>Tastory biedt de oplossing</h3>
       <p>
         Via Tastory kunnen restaurants zich <span class="hl">beter en eerlijker presenteren</span>,
-        terwijl gebruikers snel en eenvoudig restaurants ontdekken die écht bij hen passen.
-        Kwalitatieve videocontent laat zien waar een restaurant echt voor staat — <span class="hl"
+        terwijl gasten snel en eenvoudig restaurants ontdekken die écht bij hen passen.
+        Kwalitatieve restaurantprofielen laat zien waar een restaurant echt voor staat — <span class="hl"
           >authentiek, representatief en inspirerend.</span
         >
       </p>
@@ -35,6 +35,10 @@ import Icon from './Icon.astro';
 </section>
 
 <style>
+  section {
+    scroll-margin-top: 80px;
+  }
+
   .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

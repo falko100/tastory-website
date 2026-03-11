@@ -18,7 +18,7 @@ Copy
       <h1>Find it. Taste it. <em>Share it.</em></h1>
       <p class="hero-desc">
         De ultieme smaakvolle verbinding tussen gast en restaurant. Via Tastory kunnen restaurants
-        zich beter en eerlijker presenteren, terwijl gebruikers snel en eenvoudig restaurants
+        zich beter en eerlijker presenteren, terwijl gasten snel en eenvoudig restaurants
         ontdekken die écht bij hen passen.
       </p>
       <div class="hero-actions">
@@ -150,13 +150,13 @@ Copy
     font-size: clamp(3rem, 5vw, 5rem);
     line-height: 1.08;
     color: var(--white);
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 1.8rem;
     text-shadow: 0 2px 30px rgba(58, 46, 34, 0.3);
   }
   .hero h1 em {
     color: var(--orange);
-    font-style: italic;
+    font-style: normal;
   }
   .hero-desc {
     font-size: 1.15rem;
@@ -314,6 +314,9 @@ Copy
       text-align: center;
       gap: 2.5rem;
     }
+    .hero-visual {
+      order: -1;
+    }
     .hero-desc {
       margin-left: auto;
       margin-right: auto;
@@ -369,6 +372,20 @@ Copy
     }
     .fc-label {
       font-size: 0.6rem;
+    }
+  }
+  @media (max-width: 430px) {
+    .phone-wrapper {
+      padding: 0 40px;
+    }
+    .float-card-1 {
+      right: -12px;
+    }
+    .float-card-2 {
+      left: -4px;
+    }
+    .float-card-3 {
+      right: -10px;
     }
   }
 </style>

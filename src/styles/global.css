@@ -14,8 +14,8 @@
   --white: #fffcf8;
 
   /* Typography */
-  --serif: 'DM Serif Display', Georgia, serif;
-  --sans: 'Outfit', sans-serif;
+  --serif: 'Fredoka', sans-serif;
+  --sans: 'Roboto', sans-serif;
 
   /* Spacing scale */
   --space-xs: 0.25rem;
@@ -71,6 +71,18 @@ body {
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}
+
+.brand-name {
+  color: var(--orange);
+  font-style: normal;
+}
+
 /* Subtle grain overlay */
 body::after {
   content: '';
@@ -110,7 +122,7 @@ body::after {
 
 /* Section defaults */
 section {
-  padding: 5rem 3rem;
+  padding: 6rem 3rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -138,14 +150,14 @@ section {
   font-family: var(--serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
   color: var(--text);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.15;
   margin-bottom: 1.4rem;
 }
 
 .section-title em {
   color: var(--orange);
-  font-style: italic;
+  font-style: normal;
 }
 
 .section-title--light {
@@ -361,7 +373,7 @@ section {
 /* Responsive */
 @media (max-width: 640px) {
   section {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
   .page-hero {
     padding: 9rem 1.5rem 4rem;

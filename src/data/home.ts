@@ -1,8 +1,8 @@
 export const stats = [
-  { number: '58%', label: "van de gasten fotografeert hun eten, maar deelt of gebruikt de foto's niet" },
+  { number: '58%', label: "van de gasten het eten fotografeert, maar de foto's niet delen of gebruiken" },
   { number: '69%', label: 'kiest op basis van reviews van anderen' },
-  { number: '75%', label: 'kiest op basis van de beste foto\'s' },
-  { number: '80%', label: "van de gasten komen door 'in de buurt' te zoeken" },
+  { number: '75%', label: 'het restaurant kiest op basis van foto\'s' },
+  { number: '80%', label: "restaurants bezoekt door 'in de buurt' te zoeken" },
 ];
 
 export const features = [
@@ -16,7 +16,7 @@ export const features = [
     icon: 'target',
     title: 'Gericht op klanten',
     description:
-      'Via ons platform vinden gebruikers het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
+      'Via onze app vinden gasten het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
   },
   {
     icon: 'gem',
@@ -28,7 +28,7 @@ export const features = [
     icon: 'repeat',
     title: 'Terugkerende gasten',
     description:
-      'Bezoekers komen niet alleen langs, maar ze komen ook terug. Tastory helpt restaurants met zichtbaarheid, imago en het vergroten van een loyale gastenkring.',
+      'Gasten komen niet alleen langs, maar ze komen ook terug. Tastory helpt restaurants met zichtbaarheid, imago en het vergroten van een loyale gastenkring.',
   },
   {
     icon: 'share',
@@ -40,7 +40,7 @@ export const features = [
     icon: 'tag',
     title: 'Doelgroep',
     description:
-      'Gun jouw verhaal een podium. Jouw doelgroep is al gebruiker.',
+      'Gun jouw verhaal een podium. Jouw doelgroep is al gast.',
   },
 ];
 
