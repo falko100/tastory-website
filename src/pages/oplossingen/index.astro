@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Icon from '../../components/Icon.astro';
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -18,7 +16,7 @@ const base = import.meta.env.BASE_URL;
 
   <section class="solutions-overview">
     <div class="solutions-grid">
-      <a href={`${base}/oplossingen/restaurants`} class="solution-card reveal">
+      <a href="/oplossingen/restaurants" class="solution-card reveal">
         <div class="solution-bg-icon"><Icon name="utensils" size={140} /></div>
         <h2>Voor restaurants</h2>
         <p>
@@ -49,7 +47,7 @@ const base = import.meta.env.BASE_URL;
         </div>
       </a>
 
-      <a href={`${base}/oplossingen/gebruikers`} class="solution-card reveal">
+      <a href="/oplossingen/gebruikers" class="solution-card reveal">
         <div class="solution-bg-icon"><Icon name="user" size={140} /></div>
         <h2>Voor gebruikers</h2>
         <p>

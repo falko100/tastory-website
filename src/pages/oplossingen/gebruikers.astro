@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Icon from '../../components/Icon.astro';
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -13,7 +11,7 @@ const base = import.meta.env.BASE_URL;
   <PageHero
     tag="Gebruikers"
     title="Oplossingen voor <em>gebruikers</em>"
-    description="Ontdek het restaurant dat perfect bij jouw stemming, budget en gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te inspireren."
+    description="Ontdek het restaurant dat perfect bij jouw smaak, stemming, budget en gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te inspireren."
   />
 
   <section>
@@ -26,7 +24,7 @@ const base = import.meta.env.BASE_URL;
         <div class="step-number">01</div>
         <h3>Find it</h3>
         <p>
-          Download de app en ontdek het restaurant dat perfect bij jouw stemming, budget en
+          Download de app en ontdek het restaurant dat perfect bij jouw smaak, stemming, budget en
           gezelschap past. Restaurants presenteren zich op de best mogelijke manier om jou te
           inspireren.
         </p>
@@ -36,7 +34,7 @@ const base = import.meta.env.BASE_URL;
         <h3>Taste it</h3>
         <p>
           Ga langs en proef de beste gerechten bij jouw gekozen restaurant. Geniet van een ervaring
-          die precies aansluit bij wat je had verwacht, dankzij de eerlijke en representatieve
+          die aansluit bij wat je had verwacht, dankzij de eerlijke en representatieve
           profielen.
         </p>
       </div>
@@ -111,7 +109,7 @@ const base = import.meta.env.BASE_URL;
         De Tastory app komt binnenkort beschikbaar op iOS en Android. Meld je aan voor de
         nieuwsbrief en wees de eerste die het hoort!
       </p>
-      <a href={`${base}/#download`} class="btn-primary">Aanmelden voor updates</a>
+      <a href="/#download" class="btn-primary">Aanmelden voor updates</a>
     </div>
   </section>
 </BaseLayout>
