@@ -16,7 +16,7 @@ export const features = [
     icon: 'target',
     title: 'Gericht op klanten',
     description:
-      'Via ons platform vinden gasten het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
+      'Via onze app vinden gasten het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
   },
   {
     icon: 'gem',
