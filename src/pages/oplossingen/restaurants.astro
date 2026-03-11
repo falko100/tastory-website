@@ -8,9 +8,8 @@ import PageHero from '../../components/PageHero.astro';
   description="Ontdek hoe Tastory restaurants helpt met zichtbaarheid, imago en terugkerende gasten."
 >
   <PageHero
-    tag="Restaurants"
     title="Ontdek Tastory, de app die met een representatief restaurantprofiel terugkerende gasten <em>realiseert</em>"
-    description="Tastory helpt restaurants gasten aan te trekken die oprecht jouw concept waarderen, door middel van authentieke en representatieve restaurantprofielen."
+    description="Tastory helpt restaurants, gasten aan te trekken die oprecht jouw concept waarderen door middel van authentieke en representatieve restaurantprofielen."
   />
 
   <section>
@@ -21,17 +20,17 @@ import PageHero from '../../components/PageHero.astro';
     <div class="goals-grid">
       <div class="goal-card reveal">
         <div class="goal-number">01</div>
-        <h3>Meer zichtbaarheid</h3>
+        <h3>Betere zichtbaarheid</h3>
         <p>
           Word beter zichtbaar door actuele en professionele content op je restaurantprofiel.
         </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">02</div>
-        <h3>Representatief imago</h3>
+        <h3>Representatief restaurantprofiel</h3>
         <p>
-          Vertel het verhaal van jouw restaurant via short-form content en foto's. Gebruik je missie
-          en visie om nieuwe gasten aan te trekken.
+          Vertel het verhaal van jouw restaurant via short-form content. Gebruik je missie en visie
+          om nieuwe gasten aan te trekken. Tastory zorgt dat de content wordt gemaakt.
         </p>
       </div>
       <div class="goal-card reveal">
@@ -66,7 +65,7 @@ import PageHero from '../../components/PageHero.astro';
           <li>Extra zichtbaarheid in de app</li>
           <li>Alles uit 3-gangen</li>
         </ul>
-        <p class="footnote">* Kwalitatieve foto's en video worden geschoten door partner van Tastory.</p>
+        <p class="footnote">* Kwalitatieve foto's en video worden geschoten door Tastory.</p>
       </div>
       <div class="pricing-card pricing-card--featured reveal">
         <div class="pricing-badge">Populair</div>
@@ -76,7 +75,7 @@ import PageHero from '../../components/PageHero.astro';
           <li>Reservering klik-inzichten</li>
           <li>Alles uit Proeverij</li>
         </ul>
-        <p class="footnote">* Kwalitatieve foto's worden geschoten door partner van Tastory.</p>
+        <p class="footnote">* Kwalitatieve foto's worden geschoten door Tastory.</p>
       </div>
       <div class="pricing-card reveal">
         <h3>Proeverij</h3>
@@ -100,27 +99,30 @@ import PageHero from '../../components/PageHero.astro';
     </div>
     <div class="content-info reveal">
       <p>
-        Tastory werkt samen met gespecialiseerde contentmakers om de identiteit van jouw restaurant
-        vast te leggen in professionele short-form content video's van 30-60 seconden. Deze
-        video's presenteren jouw restaurant of specifieke marketingelementen op een authentieke en
-        aantrekkelijke manier.
+        Tastory heeft als doel om de identiteit van jouw restaurant vast te leggen in professionele short-form content video's van +/- 45 seconden. Deze video's presenteren jouw restaurant op een authentieke en aantrekkelijke manier.
       </p>
     </div>
   </section>
 
-  <section class="pillars-section">
-    <div class="reveal">
-      <div class="section-tag">Fundament</div>
-      <h2 class="section-title">Vijf-pijler <em>marketingplan</em></h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal"><span class="pillar-num">1</span><span>De 'why'</span></div>
-      <div class="pillar reveal"><span class="pillar-num">2</span><span>Gewenst imago</span></div>
-      <div class="pillar reveal">
-        <span class="pillar-num">3</span><span>Publieke perceptie</span>
-      </div>
-      <div class="pillar reveal"><span class="pillar-num">4</span><span>Doelgroep</span></div>
-      <div class="pillar reveal"><span class="pillar-num">5</span><span>KPI's</span></div>
+  <section class="cta-restaurants">
+    <div class="cta-restaurants-inner reveal">
+      <h2 class="section-title">Klaar om <em>ontdekt te worden?</em></h2>
+      <p>
+        Meld jouw restaurant aan en wees er vroeg bij. We houden je op de hoogte van de lancering
+        en nemen contact met je op!
+      </p>
+      <form class="email-form" id="restaurant-cta-form">
+        <input
+          type="email"
+          id="restaurant-cta-email"
+          placeholder="Jouw e-mailadres"
+          required
+          aria-label="E-mailadres"
+        />
+        <button type="submit">Aanmelden</button>
+      </form>
+      <div class="form-feedback" id="restaurant-cta-feedback"></div>
+      <div class="cta-note">Geen spam. Altijd opzegbaar.</div>
     </div>
   </section>
 </BaseLayout>
@@ -257,48 +259,104 @@ import PageHero from '../../components/PageHero.astro';
     color: var(--text-muted);
   }
 
-  /* Pillars */
-  .pillars-section {
-    background: var(--white);
-    padding: 7rem 3rem;
-    max-width: 100%;
-  }
-
-  .pillars-section > .reveal {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    margin-top: 3rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pillar {
-    background: var(--beige);
-    border: 1px solid rgba(136, 101, 69, 0.08);
-    border-radius: var(--radius-md);
-    padding: 2rem 1.5rem;
+  /* CTA */
+  .cta-restaurants {
+    padding: 8rem 3rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: var(--text-base);
-    color: var(--text);
-    font-weight: 500;
+    background: var(--beige);
+    max-width: 100%;
+    position: relative;
   }
 
-  .pillar-num {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    color: var(--orange);
+  .cta-restaurants::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 142, 62, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-restaurants-inner {
+    position: relative;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .cta-restaurants-inner > p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .email-form {
+    display: flex;
+    max-width: 520px;
+    margin: 0 auto;
+    border: 1px solid rgba(136, 101, 69, 0.15);
+    border-radius: 100px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(136, 101, 69, 0.06);
+  }
+
+  .email-form input {
+    flex: 1;
+    padding: 1rem 1.8rem;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .email-form input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .email-form button {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+    border-radius: 0 100px 100px 0;
+  }
+
+  .email-form button:hover {
+    background: var(--brown);
+  }
+
+  .form-feedback {
+    font-size: 1rem;
+    margin-top: 1rem;
+    min-height: 1.5rem;
+  }
+
+  .form-feedback--success {
+    color: #2e7d32;
+  }
+
+  .form-feedback--error {
+    color: #c62828;
+  }
+
+  .cta-note {
+    font-size: 1rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin-top: 1rem;
   }
 
   @media (max-width: 1024px) {
@@ -308,14 +366,66 @@ import PageHero from '../../components/PageHero.astro';
     .pricing-grid {
       grid-template-columns: 1fr;
     }
-    .pillars-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   @media (max-width: 640px) {
-    .pillars-grid {
-      grid-template-columns: 1fr 1fr;
+    .email-form {
+      flex-direction: column;
+      border-radius: 16px;
+    }
+    .email-form button {
+      width: 100%;
+      border-radius: 0 0 16px 16px;
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById('restaurant-cta-form') as HTMLFormElement;
+  const emailInput = document.getElementById('restaurant-cta-email') as HTMLInputElement;
+  const feedback = document.getElementById('restaurant-cta-feedback') as HTMLDivElement;
+  const submitBtn = form.querySelector('button') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Verzenden...';
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/Info@tastory.nl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: 'Restaurant aanmelding',
+          email,
+          message: 'Nieuw restaurant aangemeld via de restaurants oplossingen pagina.',
+          _subject: 'Nieuwe restaurant aanmelding — Tastory',
+          _captcha: 'false',
+          _template: 'table',
+        }),
+      });
+
+      if (res.ok) {
+        feedback.textContent = 'Bedankt voor je aanmelding! We nemen snel contact met je op.';
+        feedback.className = 'form-feedback form-feedback--success';
+        emailInput.value = '';
+      } else {
+        throw new Error('Submit failed');
+      }
+    } catch {
+      feedback.textContent = 'Er ging iets mis. Probeer het later opnieuw.';
+      feedback.className = 'form-feedback form-feedback--error';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Aanmelden';
+
+    setTimeout(() => {
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+    }, 5000);
+  });
+</script>
