@@ -278,6 +278,10 @@ import Icon from './Icon.astro';
       border-radius: 38px;
     }
 
+    .phone-screen {
+      border-radius: 34px;
+    }
+
     .float-card-1 { right: -60px; }
     .float-card-2 { right: -55px; }
     .float-card-3 { right: -55px; }
@@ -287,15 +291,17 @@ import Icon from './Icon.astro';
 
   @media (max-width: 640px) {
     .phone-mockup {
-      width: 220px;
-      height: 460px;
-      border-radius: 36px;
+      width: 200px;
+      height: 420px;
+      border-radius: 32px;
     }
 
-    .float-card-1 { right: -28px; }
-    .float-card-2 { right: -25px; }
-    .float-card-3 { right: -25px; }
+    .phone-screen {
+      border-radius: 28px;
+    }
 
-    .fc-label { font-size: 0.6rem; }
+    .float-card {
+      display: none;
+    }
   }
 </style>
