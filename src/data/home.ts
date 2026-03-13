@@ -1,16 +1,15 @@
 export const stats = [
   { number: '58%', label: "van de gasten het eten fotografeert, maar de foto's niet delen of gebruiken" },
   { number: '69%', label: 'kiest op basis van reviews van anderen' },
-  { number: '75%', label: 'het restaurant kiest op basis van foto\'s' },
-  { number: '80%', label: "restaurants bezoekt door 'in de buurt' te zoeken" },
+  { number: '75%', label: 'het restaurant kiest op basis van content' },
 ];
 
 export const features = [
   {
     icon: 'video',
-    title: 'Videocontent',
+    title: 'Content',
     description:
-      "Geen statische foto's meer. Restaurants presenteren zich via sfeervolle, kwalitatieve video's die de beleving écht overbrengen aan potentiële gasten.",
+      'Geen verouderde meer. Restaurants presenteren zich via sfeervolle, kwalitatieve content die de beleving écht overbrengen aan potentiële gasten.',
   },
   {
     icon: 'target',
@@ -40,7 +39,46 @@ export const features = [
     icon: 'tag',
     title: 'Doelgroep',
     description:
-      'Gun jouw verhaal een podium. Jouw doelgroep is al gast.',
+      'Gun jouw verhaal een podium. Jouw doelgroep is al gebruiker.',
+  },
+];
+
+export const appFunctions = [
+  {
+    icon: 'search',
+    title: 'Betrouwbare reviews die ertoe doen',
+    description:
+      'Elke review op Tastory wordt gevalideerd. Geen beoordelingen waar je vraagtekens bij kunt zetten alleen eerlijke ervaringen van echte gasten die je kunt vertrouwen.',
+  },
+  {
+    icon: 'film',
+    title: "Foto's en video's als eerste indruk",
+    description:
+      "Restaurants presenteren zichzelf via beelden die de beleving écht overbrengen. Geen misleidende stockfoto's, maar authentieke content die laat zien waar een restaurant voor staat.",
+  },
+  {
+    icon: 'map',
+    title: 'Eerlijk ontdekken, zonder betaalde posities',
+    description:
+      'Bij Tastory koop je je plek niet. Restaurants worden zichtbaar op basis van kwaliteit en beleving zodat jij altijd het beste vindt.',
+  },
+  {
+    icon: 'star',
+    title: 'Jouw persoonlijke smaakprofiel',
+    description:
+      'Bewaar restaurants die bij jóu passen. Geen eindeloze lijsten van anderen, maar jouw eigen culinaire wereld gebouwd op wat jij écht lekker vindt.',
+  },
+  {
+    icon: 'map',
+    title: 'Persoonlijke foodmap',
+    description:
+      'Maak je eigen foodmap met alle bezochte restaurants en deel deze met vrienden.',
+  },
+  {
+    icon: 'user',
+    title: 'Spaar punten voor jouw favoriete restaurant',
+    description:
+      'Spaar punten voor jouw favoriete restaurant. Lever ze in voor leuke beloningen.',
   },
 ];
 

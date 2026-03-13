@@ -43,28 +43,21 @@ const { stats } = Astro.props;
           <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
           <polyline points="6,10 9,13 14,7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Een sociale feed om foto's te delen</span>
+        <span>Een sociale feed te bouwen waar je je ervaring en content kan delen</span>
       </div>
       <div class="solution-item">
         <svg class="solution-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
           <polyline points="6,10 9,13 14,7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Reviews te valideren</span>
+        <span>Reviews te valideren om deze betrouwbaarder te maken</span>
       </div>
       <div class="solution-item">
         <svg class="solution-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
           <polyline points="6,10 9,13 14,7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Professionele content te tonen</span>
-      </div>
-      <div class="solution-item">
-        <svg class="solution-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
-          <polyline points="6,10 9,13 14,7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Restaurants vinden o.b.v. locatie</span>
+        <span>Professionele en actuele content te gebruiken</span>
       </div>
     </div>
   </div>
@@ -72,10 +65,9 @@ const { stats } = Astro.props;
 
 <style>
   .stats-bar {
-    border-top: 1px solid rgba(136, 101, 69, 0.06);
-    border-bottom: 1px solid rgba(136, 101, 69, 0.12);
     padding: 2.5rem 3rem;
     background: var(--white);
+    border-bottom: 1px solid rgba(136, 101, 69, 0.15);
   }
 
   .stats-wrapper {
@@ -116,7 +108,7 @@ const { stats } = Astro.props;
   .stats-inner {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     text-align: center;
   }
@@ -152,7 +144,6 @@ const { stats } = Astro.props;
   }
 
   .solution-bar {
-    border-bottom: 1px solid rgba(136, 101, 69, 0.06);
     padding: 2.5rem 3rem;
     background: var(--white);
   }
@@ -163,10 +154,11 @@ const { stats } = Astro.props;
 
   .solution-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     justify-content: center;
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
@@ -217,16 +209,19 @@ const { stats } = Astro.props;
 
     .stats-inner {
       width: 100%;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
 
     .solution-inner {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .solution-item {
+      flex-direction: column;
+      align-items: center;
       justify-content: flex-start;
+      text-align: center;
     }
   }
 
@@ -267,6 +262,16 @@ const { stats } = Astro.props;
 
     .solution-item {
       font-size: 0.95rem;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .solution-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
     }
   }
 </style>
