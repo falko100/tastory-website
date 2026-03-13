@@ -69,10 +69,10 @@ export const appFunctions = [
       'Bewaar restaurants die bij jóu passen. Geen eindeloze lijsten van anderen, maar jouw eigen culinaire wereld gebouwd op wat jij écht lekker vindt.',
   },
   {
-    icon: 'message-circle',
-    title: 'Deel het verhaal en de score',
+    icon: 'map',
+    title: 'Persoonlijke foodmap',
     description:
-      "Bij Tastory deel je een cijfer en je deelt een beleving. Inspireer anderen om het restaurant ook te bezoeken.",
+      'Maak je eigen foodmap met alle bezochte restaurants en deel deze met vrienden.',
   },
   {
     icon: 'user',
