@@ -67,13 +67,15 @@ import PageHero from '../../components/PageHero.astro';
       <div class="pricing-card pricing-card--featured reveal">
         <div class="pricing-badge">Aanbevolen</div>
         <h3>Chefs Choice</h3>
-        <p class="pricing-description">Een compleet samengesteld pakket met professionele content en alle functies uit de menukaart.</p>
+        <p class="pricing-description">Een compleet pakket — alle functies uit de menukaart zijn inbegrepen.</p>
+        <p class="pricing-menu-label">Alle menukaart-functies inbegrepen:</p>
         <ul>
+          <li>App-plaatsing</li>
+          <li>Volledig profielbeheer in huisstijl</li>
           <li>Professionele foto's en video's door Tastory</li>
           <li>Marketingplan op maat</li>
           <li>Extra zichtbaarheid in de app</li>
           <li>Reservering klik-inzichten</li>
-          <li>Alle functies uit de menukaart inbegrepen</li>
         </ul>
       </div>
     </div>
@@ -250,6 +252,15 @@ import PageHero from '../../components/PageHero.astro';
     color: var(--text-muted);
     margin-bottom: 1.25rem;
     line-height: 1.6;
+  }
+
+  .pricing-menu-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
   }
 
   .pricing-card ul {
