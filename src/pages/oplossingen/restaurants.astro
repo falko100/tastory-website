@@ -67,13 +67,14 @@ import PageHero from '../../components/PageHero.astro';
               <div class="slider-item"><span class="slider-icon">✦</span>Reserveringsbevestiging</div>
               <div class="slider-item"><span class="slider-icon">✦</span>Webpagina op Google</div>
               <div class="slider-item"><span class="slider-icon">✦</span>Uniek loyaliteitsprogramma</div>
-              <div class="slider-item"><span class="slider-icon">✦</span>Lokale populariteit</div>
+              <div class="slider-item"><span class="slider-icon">✦</span>Inzicht in lokale populariteit</div>
             </div>
           </div>
           <button class="slider-btn slider-btn--next" id="slider-next" aria-label="Volgende optie">&#8594;</button>
         </div>
         <h3>Stel je eigen menu samen</h3>
         <p class="pricing-description">Kies zelf welke gerechten je aan jouw restaurantprofiel toevoegt. Betaal alleen voor wat bij jou past.</p>
+        <p class="pricing-note">Dit zijn een aantal van de beschikbare opties. Na contact bespreken we alle mogelijkheden die bij jouw restaurant passen.</p>
       </div>
     </div>
   </section>
@@ -244,8 +245,16 @@ import PageHero from '../../components/PageHero.astro';
   .pricing-description {
     font-size: var(--text-base);
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     line-height: 1.6;
+  }
+
+  .pricing-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    line-height: 1.5;
+    font-style: italic;
   }
 
   .pricing-menu-label {
