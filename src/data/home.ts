@@ -72,7 +72,7 @@ export const appFunctions = [
     icon: 'message-circle',
     title: 'Deel het verhaal en de score',
     description:
-      "Bij Tastory deel je een cijfer en je deelt een beleving. Een sfeer,",
+      "Bij Tastory deel je een cijfer en je deelt een beleving. Inspireer anderen om het restaurant ook te bezoeken.",
   },
   {
     icon: 'user',
