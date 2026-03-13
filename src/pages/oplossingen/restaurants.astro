@@ -12,7 +12,7 @@ import PageHero from '../../components/PageHero.astro';
     description="Via Tastory kunnen restaurants zich beter en eerlijker presenteren, terwijl gasten snel en eenvoudig restaurants ontdekken die echt bij ze passen."
   />
 
-  <section>
+  <section class="goals-section">
     <div class="reveal">
       <div class="section-tag">Wat je bereikt</div>
       <h2 class="section-title">Vier doelen, &eacute;&eacute;n <em>app</em></h2>
@@ -150,11 +150,24 @@ import PageHero from '../../components/PageHero.astro';
 </BaseLayout>
 
 <style>
+  .goals-section {
+    max-width: 100%;
+  }
+
+  .goals-section > .reveal {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .goals-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .goal-card {
