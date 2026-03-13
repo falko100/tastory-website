@@ -65,6 +65,22 @@ import PageHero from '../../components/PageHero.astro';
     </div>
   </section>
 
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      {[...Array(3)].map(() => (
+        <ul class="ticker-list">
+          <li><span class="ticker-dot">●</span>Gepersonaliseerd profiel</li>
+          <li><span class="ticker-dot">●</span>Professionele foto's</li>
+          <li><span class="ticker-dot">●</span>Professionele video</li>
+          <li><span class="ticker-dot">●</span>Reserveringsbevestiging</li>
+          <li><span class="ticker-dot">●</span>Webpagina op Google</li>
+          <li><span class="ticker-dot">●</span>Uniek loyaliteitsprogramma</li>
+          <li><span class="ticker-dot">●</span>Lokale populariteit</li>
+        </ul>
+      ))}
+    </div>
+  </div>
+
   <section class="how-it-works">
     <div class="reveal">
       <div class="section-tag">Zo werkt het</div>
@@ -413,6 +429,53 @@ import PageHero from '../../components/PageHero.astro';
     color: var(--text-muted);
     opacity: 0.6;
     margin-top: 1rem;
+  }
+
+  /* Ticker */
+  .ticker-wrap {
+    overflow: hidden;
+    background: var(--brown);
+    padding: 1.1rem 0;
+    white-space: nowrap;
+  }
+
+  .ticker-track {
+    display: inline-flex;
+    animation: ticker-scroll 40s linear infinite;
+  }
+
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); }
+  }
+
+  .ticker-list {
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+    gap: 0;
+  }
+
+  .ticker-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    padding: 0 2.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .ticker-dot {
+    color: var(--orange);
+    font-size: 0.5rem;
+    flex-shrink: 0;
   }
 
   @media (max-width: 1024px) {
