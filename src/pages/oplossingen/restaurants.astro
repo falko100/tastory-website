@@ -58,17 +58,20 @@ import PageHero from '../../components/PageHero.astro';
       <div class="pricing-card reveal">
         <div class="card-ticker" aria-hidden="true">
           <div class="card-ticker-track">
-            {[...Array(4)].map(() => (
-              <ul class="card-ticker-list">
-                <li><span class="card-ticker-dot">✦</span>Gepersonaliseerd profiel</li>
-                <li><span class="card-ticker-dot">✦</span>Professionele foto's</li>
-                <li><span class="card-ticker-dot">✦</span>Professionele video</li>
-                <li><span class="card-ticker-dot">✦</span>Reserveringsbevestiging</li>
-                <li><span class="card-ticker-dot">✦</span>Webpagina op Google</li>
-                <li><span class="card-ticker-dot">✦</span>Uniek loyaliteitsprogramma</li>
-                <li><span class="card-ticker-dot">✦</span>Inzicht in lokale populariteit</li>
-              </ul>
-            ))}
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Gepersonaliseerd profiel</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Professionele foto's</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Professionele video</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Reserveringsbevestiging</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Webpagina op Google</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Uniek loyaliteitsprogramma</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Inzicht in lokale populariteit</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Gepersonaliseerd profiel</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Professionele foto's</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Professionele video</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Reserveringsbevestiging</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Webpagina op Google</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Uniek loyaliteitsprogramma</span>
+            <span class="card-ticker-item"><span class="card-ticker-dot">✦</span>Inzicht in lokale populariteit</span>
           </div>
         </div>
         <h3>Stel je eigen menu samen</h3>
@@ -447,18 +450,14 @@ import PageHero from '../../components/PageHero.astro';
   }
 
   .card-ticker-track {
-    display: inline-flex;
-    animation: card-ticker-scroll 30s linear infinite;
-  }
-
-  .card-ticker-list {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    list-style: none;
-    gap: 0;
+    animation: card-ticker-scroll 30s linear infinite;
+    width: max-content;
   }
 
-  .card-ticker-list li {
+  .card-ticker-item {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -467,6 +466,7 @@ import PageHero from '../../components/PageHero.astro';
     font-weight: 500;
     color: var(--white);
     padding: 0 2rem;
+    white-space: nowrap;
   }
 
   .card-ticker-dot {
@@ -477,7 +477,7 @@ import PageHero from '../../components/PageHero.astro';
 
   @keyframes card-ticker-scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-25%); }
+    to { transform: translateX(-50%); }
   }
 
   @media (max-width: 1024px) {
