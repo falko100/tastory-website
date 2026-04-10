@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
-  title="Oplossingen voor restaurants — Tastory"
-  description="Ontdek hoe Tastory restaurants helpt met zichtbaarheid, imago en terugkerende gasten."
+  title="Meer gasten voor jouw restaurant — Zichtbaarheid via Tastory"
+  description="Presenteer jouw restaurant via professionele video en bereik gasten die écht bij jou passen. Tastory helpt restaurants groeien met meer zichtbaarheid, een sterk profiel en terugkerende gasten."
 >
   <PageHero
-    title="Ontdek Tastory, de app die met een representatief restaurantprofiel terugkerende gasten <em>realiseert</em>"
-    description="Tastory helpt restaurants, gasten aan te trekken die oprecht jouw concept waarderen door middel van authentieke en representatieve restaurantprofielen."
+    title="Tastory, de app die met een representatief restaurantprofiel terugkerende gasten <em>realiseert</em>"
+    description="Via Tastory kunnen restaurants zich beter en eerlijker presenteren, terwijl gasten snel en eenvoudig restaurants ontdekken die echt bij ze passen."
   />
 
-  <section>
+  <section class="goals-section">
     <div class="reveal">
       <div class="section-tag">Wat je bereikt</div>
       <h2 class="section-title">Vier doelen, &eacute;&eacute;n <em>app</em></h2>
@@ -22,30 +23,28 @@ import PageHero from '../../components/PageHero.astro';
         <div class="goal-number">01</div>
         <h3>Betere zichtbaarheid</h3>
         <p>
-          Word beter zichtbaar door actuele en professionele content op je restaurantprofiel.
+          Bereik gasten die actief op zoek zijn naar een restaurant zoals de jouwe. Door een authentiek restaurantprofiel met acutele, professionele content val je op, precies op het moment dat telt.
         </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">02</div>
-        <h3>Representatief restaurantprofiel</h3>
+        <h3>Gasten die écht bij jou passen</h3>
         <p>
-          Vertel het verhaal van jouw restaurant via short-form content. Gebruik je missie en visie
-          om nieuwe gasten aan te trekken. Tastory zorgt dat de content wordt gemaakt.
+          Vertel het verhaal van jouw restaurant via authentieke content. Zo trek je gasten aan die jouw concept waarderen en niet alleen op zoek zijn naar de goedkoopste optie.
         </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">03</div>
         <h3>Terugkerende gasten</h3>
         <p>
-          Gebruik inzichten en gastervaringen om je profiel representatiever te maken, zodat
-          verwachtingen overeenkomen met de werkelijkheid.
+          Gasten die precies weten wat ze kunnen verwachten en komen terug. Tastory zorgt voor loyale gasten door de verwachting van een restaurant aan te laten sluiten op realiteit.
         </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-number">04</div>
-        <h3>Betere reviews</h3>
+        <h3>Betrouwbare reviews</h3>
         <p>
-          Gebruik het Tastory-dashboard om verbeteringen door te voeren en ervaringen te verbeteren.
+          Elke review op Tastory wordt gevalideerd. Zo weet jij zeker dat de feedback die je ontvangt eerlijk is en kun je er ook daadwerkelijk iets mee.
         </p>
       </div>
     </div>
@@ -53,55 +52,55 @@ import PageHero from '../../components/PageHero.astro';
 
   <section class="pricing-section">
     <div class="reveal">
-      <div class="section-tag">Pakketten</div>
-      <h2 class="section-title">Kies het pakket dat bij jou <em>past</em></h2>
+      <div class="section-tag">Gerechten</div>
+      <h2 class="section-title">Kies de gerechten die bij jou <em>passen</em></h2>
+      <p class="pricing-intro">Wij hebben de beste ingrediënten voor jouw succes al klaarstaan. Hieronder een greep uit wat Tastory voor jouw restaurant kan betekenen.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <h3>Chefs Keuze</h3>
-        <ul>
-          <li>Kwalitatieve foto's en video's*</li>
-          <li>Marketingplan</li>
-          <li>Extra zichtbaarheid in de app</li>
-          <li>Alles uit 3-gangen</li>
-        </ul>
-        <p class="footnote">* Kwalitatieve foto's en video worden geschoten door Tastory.</p>
+    <div class="dishes-list">
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Gepersonaliseerd profiel</h3>
+          <p>Een authentiek restaurantprofiel dat jouw concept, sfeer en keuken laat zien op de manier die bij jou past.</p>
+        </div>
       </div>
-      <div class="pricing-card pricing-card--featured reveal">
-        <div class="pricing-badge">Populair</div>
-        <h3>3-Gangen Menu</h3>
-        <ul>
-          <li>Kwalitatieve foto's*</li>
-          <li>Reservering klik-inzichten</li>
-          <li>Alles uit Proeverij</li>
-        </ul>
-        <p class="footnote">* Kwalitatieve foto's worden geschoten door Tastory.</p>
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Professionele video</h3>
+          <p>Kwalitatieve video die de sfeer en het karakter van jouw restaurant tot leven brengt voor potentiële gasten.</p>
+        </div>
       </div>
-      <div class="pricing-card reveal">
-        <h3>Proeverij</h3>
-        <ul>
-          <li>App-plaatsing</li>
-          <li>Coming-soon portaal toegang</li>
-          <li>Volledig profielbeheer in huisstijl</li>
-          <li>Zelf content aanleveren*</li>
-        </ul>
-        <p class="footnote">* Jij levert jouw unieke foto's en video's aan volgens de richtlijnen en voorwaarden van Tastory. Zo houden wij de app objectief en creëren wij een uniforme standaard.</p>
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Professionele foto's</h3>
+          <p>Stijlvolle foto's van jouw gerechten, sfeer en interieur die bezoekers direct het gevoel geven van jouw restaurant.</p>
+        </div>
+      </div>
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Reserveringsbevestiging</h3>
+          <p>Automatische persoonlijke bevestiging zodat gasten met een goed gevoel naar jouw restaurant komen.</p>
+        </div>
+      </div>
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Inzicht in performance</h3>
+          <p>Inzicht in hoe jouw restaurant presteert in de buurt, zodat je beter kunt inspelen op de wensen van jouw doelgroep.</p>
+        </div>
+      </div>
+      <div class="dish-row reveal">
+        <div class="dish-icon"><Icon name="check" size={20} /></div>
+        <div class="dish-content">
+          <h3>Links naar website & socials</h3>
+          <p>Directe links vanuit jouw Tastory-profiel naar jouw eigen website en sociale media kanalen voor maximale zichtbaarheid.</p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section>
-    <div class="reveal">
-      <div class="section-tag">Professionele content</div>
-      <h2 class="section-title">
-        Short-form video's die jouw restaurant <em>tot leven brengen</em>
-      </h2>
-    </div>
-    <div class="content-info reveal">
-      <p>
-        Tastory heeft als doel om de identiteit van jouw restaurant vast te leggen in professionele short-form content video's van +/- 45 seconden. Deze video's presenteren jouw restaurant op een authentieke en aantrekkelijke manier.
-      </p>
-    </div>
+    <p class="pricing-footer reveal">Dit is een selectie van de beschikbare opties. Na contact bespreken we alle mogelijkheden die bij jouw restaurant passen.</p>
   </section>
 
   <section class="how-it-works">
@@ -113,12 +112,12 @@ import PageHero from '../../components/PageHero.astro';
       <div class="step reveal">
         <div class="step-number">01</div>
         <h3>Aanmelden</h3>
-        <p>Meld je restaurant aan en kies het pakket dat bij jou past. We nemen snel contact met je op.</p>
+        <p>Meld je restaurant aan en kies de gerechten die het beste bij jou passen. We nemen snel contact met je op.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">02</div>
         <h3>Content creëren</h3>
-        <p>Tastory schiet professionele foto's en video's die het karakter van jouw restaurant laten zien.</p>
+        <p>We gaan met jou in gesprek om jouw restaurant zo persoonlijk en goed mogelijk te kunnen laten zien. Daarna schiet Tastory professionele foto's en video's die het karakter van jouw restaurant laten zien.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">03</div>
@@ -149,14 +148,57 @@ import PageHero from '../../components/PageHero.astro';
       <div class="cta-note">Geen spam. Altijd opzegbaar.</div>
     </div>
   </section>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Tastory voor restaurants',
+      provider: {
+        '@type': 'Organization',
+        name: 'Tastory',
+        url: 'https://www.tastory.nl',
+      },
+      description:
+        'Tastory helpt restaurants meer gasten te bereiken via professionele videoprofielen en sterkere online zichtbaarheid. Ideaal voor toprestaurants die zich onderscheiden.',
+      serviceType: 'Restaurantmarketing',
+      areaServed: {
+        '@type': 'Country',
+        name: 'Nederland',
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Tastory restaurant opties',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gepersonaliseerd restaurantprofiel' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Professionele restaurantvideo' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Professionele restaurantfoto\'s' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Reserveringsbevestiging' } },
+        ],
+      },
+    })}
+  />
 </BaseLayout>
 
 <style>
+  .goals-section {
+    max-width: 100%;
+  }
+
+  .goals-section > .reveal {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .goals-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .goal-card {
@@ -187,105 +229,114 @@ import PageHero from '../../components/PageHero.astro';
     color: var(--text-muted);
   }
 
-  /* Pricing */
+  /* Pricing / Gerechten */
   .pricing-section {
-    background: var(--white);
+    background: var(--beige);
     padding: 6rem 3rem;
     max-width: 100%;
   }
 
   .pricing-section > .reveal {
-    max-width: 1400px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
 
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pricing-card {
-    background: var(--beige);
-    border: 1px solid rgba(136, 101, 69, 0.08);
-    border-radius: 20px;
-    padding: 2.5rem;
-    position: relative;
-  }
-
-  .pricing-card--featured {
-    border-color: var(--orange);
-    box-shadow: 0 10px 40px rgba(255, 142, 62, 0.12);
-  }
-
-  .pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--orange);
-    color: var(--white);
-    padding: 0.3rem 1.2rem;
-    border-radius: 100px;
-    font-size: var(--text-base);
-    font-weight: 600;
-  }
-
-  .pricing-card h3 {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-
-  .pricing-card ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .pricing-card li {
-    font-size: var(--text-base);
-    color: var(--text);
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .pricing-card li::before {
-    content: '\2713';
-    position: absolute;
-    left: 0;
-    color: var(--orange);
-    font-weight: 600;
-  }
-
-  .footnote {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
-    line-height: 1.4;
-  }
-
-  .content-info {
-    max-width: 700px;
-    margin-top: 2rem;
-  }
-
-  .content-info p {
+  .pricing-intro {
     font-size: 1.05rem;
-    line-height: 1.8;
     color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dishes-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 3.5rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(136, 101, 69, 0.15);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+  }
+
+  .dish-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    border-bottom: 1px solid rgba(136, 101, 69, 0.1);
+    transition: background 0.2s ease;
+  }
+
+  .dish-row:nth-child(odd) {
+    border-right: 1px solid rgba(136, 101, 69, 0.08);
+  }
+
+  .dish-row:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .dish-row:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .dish-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 142, 62, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    margin-top: 0.1rem;
+  }
+
+  .dish-icon :global(.icon) {
+    stroke-width: 3;
+  }
+
+  .dish-content h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    line-height: 1.35;
+  }
+
+  .dish-content p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .pricing-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 2.5rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.75;
   }
 
   /* How it works */
   .how-it-works {
-    background: var(--white);
+    background: var(--beige);
     max-width: 100%;
     padding: 6rem 3rem;
   }
@@ -307,7 +358,7 @@ import PageHero from '../../components/PageHero.astro';
   }
 
   .step {
-    background: var(--beige);
+    background: var(--white);
     border: 1px solid rgba(136, 101, 69, 0.08);
     border-radius: var(--radius-md);
     padding: 2.5rem;
@@ -439,9 +490,6 @@ import PageHero from '../../components/PageHero.astro';
     .goals-grid {
       grid-template-columns: 1fr;
     }
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
     .steps-grid {
       grid-template-columns: 1fr;
     }
@@ -450,6 +498,21 @@ import PageHero from '../../components/PageHero.astro';
   @media (max-width: 640px) {
     .how-it-works {
       padding: 4rem 1.5rem;
+    }
+    .pricing-section {
+      padding: 4rem 1.5rem;
+    }
+    .dishes-list {
+      grid-template-columns: 1fr;
+    }
+    .dish-row:nth-child(odd) {
+      border-right: none;
+    }
+    .dish-row:nth-last-child(-n+2) {
+      border-bottom: 1px solid rgba(136, 101, 69, 0.08);
+    }
+    .dish-row:last-child {
+      border-bottom: none;
     }
   }
 
@@ -466,6 +529,7 @@ import PageHero from '../../components/PageHero.astro';
 </style>
 
 <script>
+  // Form
   const form = document.getElementById('restaurant-cta-form') as HTMLFormElement;
   const emailInput = document.getElementById('restaurant-cta-email') as HTMLInputElement;
   const feedback = document.getElementById('restaurant-cta-feedback') as HTMLDivElement;

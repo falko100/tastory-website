@@ -5,13 +5,12 @@ import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
-  title="Oplossingen — Tastory"
-  description="Tastory biedt oplossingen voor zowel restaurants als gasten. Ontdek hoe wij jullie samenbrengen."
+  title="Oplossingen voor restaurants & gasten — Tastory"
+  description="Tastory verbindt toprestaurants met de juiste gasten via kwalitatieve video. Ontdek hoe onze app waarde creëert voor restaurants en foodies die op zoek zijn naar de beste restaurantbeleving."
 >
   <PageHero
-    tag="Oplossingen"
     title="Oplossingen voor <em>restaurants</em> en <em>gasten</em>"
-    description="Tastory brengt restaurants en gasten samen. Ontdek hoe onze app waarde creëert voor beide kanten."
+    description="Tastory is de ultieme verbinding tussen restaurant en gast. Ontdek hoe onze app waarde creëert voor beide kanten."
   />
 
   <section class="solutions-overview">
@@ -20,7 +19,7 @@ import Icon from '../../components/Icon.astro';
         <div class="solution-bg-icon"><Icon name="utensils" size={140} /></div>
         <h2>Voor restaurants</h2>
         <p>
-          Via Tastory kunnen restaurants zich beter en eerlijker presenteren, terwijl gasten snel en eenvoudig restaurants ontdekken die écht bij hen passen. Kwalitatieve restaurantprofielen laat zien waar een restaurant echt voor staat — authentiek, representatief en inspirerend.
+          Via Tastory kunnen restaurants zich beter en eerlijker presenteren, terwijl gasten snel en eenvoudig restaurants ontdekken die echt bij ze passen.
         </p>
         <div class="solution-steps">
           <div class="solution-step">
@@ -55,7 +54,7 @@ import Icon from '../../components/Icon.astro';
         <div class="solution-steps">
           <div class="solution-step">
             <span class="step-label">Find it</span>
-            <span class="step-desc">Ontdek hét restaurant dat bij je past</span>
+            <span class="step-desc">Vind hét restaurant dat bij je past</span>
           </div>
           <div class="solution-step">
             <span class="step-label">Taste it</span>
@@ -95,7 +94,8 @@ import Icon from '../../components/Icon.astro';
     border-radius: 20px;
     padding: 3rem;
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
     transition: all 0.4s;
     position: relative;
     overflow: hidden;
@@ -167,6 +167,8 @@ import Icon from '../../components/Icon.astro';
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    margin-top: auto;
+    align-self: flex-start;
     background: var(--orange);
     color: var(--white);
     font-size: var(--text-base);

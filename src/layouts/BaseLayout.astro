@@ -6,11 +6,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  keywords?: string[];
 }
 
 const {
   title,
   description = 'De ultieme smaakvolle verbinding tussen gast en restaurant. Ontdek restaurants via kwalitatieve videocontent.',
+  keywords,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(`${import.meta.env.BASE_URL}/tastory-logo.png`, Astro.site);
@@ -22,6 +24,7 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}/tastory-logo.png`, Astro.si
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
     <meta name="theme-color" content="#F5EBDD" />
 
     <!-- Open Graph -->
@@ -118,38 +121,6 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}/tastory-logo.png`, Astro.si
       mobileMenu?.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', closeMenu);
       });
-
-      // Color "Tastory" brand name orange in all text content
-      (function () {
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-          acceptNode(node) {
-            const tag = (node as Text).parentElement?.tagName ?? '';
-            if (['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(tag)) return NodeFilter.FILTER_REJECT;
-            return (node as Text).textContent?.includes('Tastory')
-              ? NodeFilter.FILTER_ACCEPT
-              : NodeFilter.FILTER_SKIP;
-          },
-        });
-        const nodes: Text[] = [];
-        let node: Node | null;
-        while ((node = walker.nextNode())) nodes.push(node as Text);
-        nodes.forEach((textNode) => {
-          const parts = textNode.textContent!.split(/(Tastory)/g);
-          if (parts.length < 2) return;
-          const frag = document.createDocumentFragment();
-          parts.forEach((part, i) => {
-            if (i % 2 === 1) {
-              const span = document.createElement('span');
-              span.className = 'brand-name';
-              span.textContent = part;
-              frag.appendChild(span);
-            } else if (part) {
-              frag.appendChild(document.createTextNode(part));
-            }
-          });
-          textNode.parentNode!.replaceChild(frag, textNode);
-        });
-      })();
     </script>
   </body>
 </html>

@@ -16,9 +16,8 @@ type Props = { post: CollectionEntry<'blog'> };
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
-<BaseLayout title={`${post.data.title} — Tastory Blog`} description={post.data.description}>
+<BaseLayout title={`${post.data.title} — Tastory Blog`} description={post.data.description} keywords={post.data.tags}>
   <PageHero
-    tag="Blog"
     title={`<em>${post.data.title}</em>`}
     description={formatDate(post.data.date)}
   />
@@ -45,6 +44,8 @@ const { Content } = await post.render();
 <style>
   .blog-article {
     max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
   }
   .blog-article-inner {
     max-width: 740px;
@@ -65,9 +66,9 @@ const { Content } = await post.render();
     letter-spacing: 0.02em;
   }
   .blog-content {
-    font-size: var(--text-lg);
-    line-height: 1.9;
-    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--text);
   }
   .blog-content :global(h2) {
     font-family: var(--serif);
@@ -119,12 +120,13 @@ const { Content } = await post.render();
     border-top: 1px solid rgba(136, 101, 69, 0.08);
   }
   .btn-secondary-light {
-    color: var(--brown);
+    color: var(--brown-dark);
     font-family: var(--sans);
     font-size: var(--text-base);
+    font-weight: 500;
     letter-spacing: 0.04em;
-    background: rgba(136, 101, 69, 0.06);
-    border: 1px solid rgba(136, 101, 69, 0.1);
+    background: rgba(136, 101, 69, 0.12);
+    border: 1.5px solid rgba(136, 101, 69, 0.35);
     padding: 0.85rem 2rem;
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -133,8 +135,13 @@ const { Content } = await post.render();
     display: inline-block;
   }
   .btn-secondary-light:hover {
-    background: rgba(136, 101, 69, 0.1);
-    border-color: rgba(136, 101, 69, 0.18);
+    background: rgba(136, 101, 69, 0.2);
+    border-color: rgba(136, 101, 69, 0.55);
     color: var(--text);
+  }
+  @media (max-width: 640px) {
+    .blog-article {
+      padding: 4rem 1.5rem;
+    }
   }
 </style>

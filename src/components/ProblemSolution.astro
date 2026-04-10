@@ -4,32 +4,58 @@ import Icon from './Icon.astro';
 
 <section id="oplossingen">
   <div class="reveal">
-    <div class="section-tag">Het Probleem & de Oplossing</div>
+    <div class="section-tag">Probleem & Oplossing</div>
     <div class="section-title">
-      Betere zichtbaarheid voor <em>restaurants.</em><br />Betere keuzes voor <em>gasten.</em>
+      Betere zichtbaarheid voor <em>restaurants.</em><br />Betere keuzes door <em>gasten.</em>
     </div>
   </div>
-  <div class="problem-grid">
-    <div class="problem-card problem reveal-left">
-      <div class="problem-bg-icon"><Icon name="alert-circle" size={120} /></div>
-      <h3>Het probleem</h3>
-      <p>
-        Heb je ook last van <span
-          class="hl">Verouderde foto's, onbetrouwbare reviews en onoverzichtelijke interfaces</span
-        >? Ze geven geen representatief beeld van een restaurant. Het maakt de keuze voor het juiste restaurant
-        onnodig lastig.
-      </p>
+  <div class="ps-grid">
+    <div class="problem-grid">
+      <div class="problem-card problem reveal-left">
+        <div class="problem-bg-icon"><Icon name="alert-circle" size={120} /></div>
+        <h3>Het probleem</h3>
+        <p>
+          Door <strong>verouderde foto's</strong>, <strong>onbetrouwbare reviews</strong> en <strong>onoverzichtelijke platforms</strong> krijgen gebruikers vaak geen realistisch beeld van restaurants. Dit maakt het lastig om het juiste restaurant te kiezen en zorgt er tegelijkertijd voor dat restaurants gasten <strong>mislopen</strong>.
+        </p>
+      </div>
+      <div class="problem-card solution reveal-left">
+        <div class="problem-bg-icon"><Icon name="sparkles" size={120} /></div>
+        <h3>Tastory biedt de oplossing</h3>
+        <p>
+          Via Tastory kunnen restaurants zich <span class="hl">beter en eerlijker presenteren</span>,
+          terwijl gasten snel en eenvoudig restaurants ontdekken die écht bij hen passen.
+          Kwalitatieve restaurantprofielen laat zien waar een restaurant echt voor staat — <span class="hl"
+            >authentiek, representatief en inspirerend.</span
+          >
+        </p>
+      </div>
     </div>
-    <div class="problem-card solution reveal-right">
-      <div class="problem-bg-icon"><Icon name="sparkles" size={120} /></div>
-      <h3>Tastory biedt de oplossing</h3>
-      <p>
-        Via Tastory kunnen restaurants zich <span class="hl">beter en eerlijker presenteren</span>,
-        terwijl gasten snel en eenvoudig restaurants ontdekken die écht bij hen passen.
-        Kwalitatieve restaurantprofielen laat zien waar een restaurant echt voor staat — <span class="hl"
-          >authentiek, representatief en inspirerend.</span
-        >
-      </p>
+    <div class="ps-phone reveal-right">
+      <div class="phone-glow"></div>
+      <div class="phone-wrapper">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img
+              src="/SCR-20260312-notu.jpeg"
+              alt="Tastory app screenshot"
+              class="phone-screenshot"
+              width="751"
+              height="3905"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="float-card float-card-1">
+          <div class="fc-label">Reviews met hoge<br>betrouwbaarheid</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="fc-label">Jouw verhaal</div>
+        </div>
+        <div class="float-card float-card-3">
+          <div class="fc-label">Actuele content</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -39,11 +65,18 @@ import Icon from './Icon.astro';
     scroll-margin-top: 80px;
   }
 
-  .problem-grid {
+  .ps-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr 430px;
+    gap: 4rem;
     margin-top: 3.5rem;
+    align-items: center;
+  }
+
+  .problem-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .problem-card {
@@ -57,7 +90,7 @@ import Icon from './Icon.astro';
     position: absolute;
     bottom: 10px;
     right: 10px;
-    opacity: 0.06;
+    opacity: 0.1;
     pointer-events: none;
   }
 
@@ -70,13 +103,15 @@ import Icon from './Icon.astro';
   }
 
   .problem-card.problem {
-    background: rgba(136, 101, 69, 0.04);
-    border: 1px solid rgba(136, 101, 69, 0.1);
+    background: rgba(136, 101, 69, 0.08);
+    border: 1px solid rgba(136, 101, 69, 0.22);
+    box-shadow: 0 4px 24px rgba(136, 101, 69, 0.07);
   }
 
   .problem-card.solution {
-    background: rgba(255, 142, 62, 0.04);
-    border: 1px solid rgba(255, 142, 62, 0.12);
+    background: rgba(255, 142, 62, 0.08);
+    border: 1px solid rgba(255, 142, 62, 0.25);
+    box-shadow: 0 4px 24px rgba(255, 142, 62, 0.08);
   }
 
   .problem-card h3 {
@@ -97,10 +132,209 @@ import Icon from './Icon.astro';
     font-weight: 500;
   }
 
-  @media (max-width: 1024px) {
-    .problem-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+  .problem-card.problem strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* Phone mockup */
+  .ps-phone {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .phone-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 142, 62, 0.28) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .phone-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .phone-mockup {
+    width: 280px;
+    height: 600px;
+    background: #1a1714;
+    border-radius: 44px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.2),
+      0 0 0 1.5px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    --screenshot-scroll: -58%;
+  }
+
+  .phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 26px;
+    background: #0e0c0a;
+    border-radius: 0 0 18px 18px;
+    z-index: 5;
+  }
+
+  .phone-screen {
+    position: absolute;
+    inset: 5px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: #161310;
+  }
+
+  .phone-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: scroll-app 10s ease-in-out 1s infinite alternate;
+  }
+
+  @keyframes scroll-app {
+    0%, 15% { transform: translateY(0); }
+    85%, 100% { transform: translateY(var(--screenshot-scroll)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .phone-screenshot {
+      animation: none;
     }
+  }
+
+  .float-card {
+    position: absolute;
+    background: rgba(255, 252, 248, 0.95);
+    backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(255, 142, 62, 0.35);
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.75rem;
+    animation: float 6s ease-in-out infinite;
+    white-space: nowrap;
+    box-shadow:
+      0 4px 12px rgba(58, 46, 34, 0.08),
+      0 12px 40px rgba(58, 46, 34, 0.1),
+      0 0 0 1px rgba(255, 142, 62, 0.08);
+  }
+
+  .float-card-1 {
+    top: 22%;
+    right: -135px;
+    animation-delay: 0s;
+  }
+
+  .float-card-2 {
+    bottom: 16%;
+    right: -120px;
+    animation-delay: 2s;
+  }
+
+  .float-card-3 {
+    top: 52%;
+    right: -130px;
+    animation-delay: 4s;
+  }
+
+  .fc-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 1200px) {
+    .float-card-1 { right: -80px; }
+    .float-card-2 { right: -70px; }
+    .float-card-3 { right: -75px; }
+  }
+
+  @media (max-width: 1024px) {
+    .ps-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .ps-phone {
+      order: -1;
+      justify-content: center;
+    }
+
+    .phone-mockup {
+      width: 240px;
+      height: 500px;
+      border-radius: 38px;
+    }
+
+    .phone-screen {
+      inset: 4px;
+      border-radius: 35px;
+    }
+
+    .float-card-1 { right: -60px; }
+    .float-card-2 { right: -55px; }
+    .float-card-3 { right: -55px; }
+
+    .fc-label { font-size: 0.65rem; }
+  }
+
+  @media (max-width: 640px) {
+    .phone-mockup {
+      width: 200px;
+      height: 428px;
+      border-radius: 36px;
+    }
+
+    .phone-screen {
+      inset: 3px;
+      border-radius: 33px;
+    }
+
+    .float-card {
+      padding: 0.3rem 0.55rem;
+    }
+
+    .float-card-1 { right: -80px; }
+    .float-card-2 { right: -70px; }
+    .float-card-3 { right: -75px; }
+
+    .fc-label { font-size: 0.55rem; }
+  }
+
+  @media (max-width: 390px) {
+    .phone-mockup {
+      width: 190px;
+      height: 405px;
+      border-radius: 34px;
+    }
+
+    .float-card-1 { right: -80px; }
+    .float-card-2 { right: -70px; }
+    .float-card-3 { right: -75px; }
+  }
+
+  @media (max-width: 360px) {
+    .phone-mockup {
+      width: 175px;
+      height: 375px;
+      border-radius: 32px;
+    }
+
+    .float-card-1 { right: -65px; }
+    .float-card-2 { right: -55px; }
+    .float-card-3 { right: -60px; }
   }
 </style>
