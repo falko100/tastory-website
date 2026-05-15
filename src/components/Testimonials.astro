@@ -9,8 +9,8 @@ const { testimonials } = Astro.props;
 <div class="testimonials-section">
   <div class="testimonials-inner">
     <div class="reveal">
-      <div class="section-tag">Gasten</div>
-      <div class="section-title">Wat toekomstige gasten over <em>Tastory</em> zeggen</div>
+      <div class="section-tag">Gebruikers</div>
+      <div class="section-title">Wat toekomstige gebruikers over <em>Tastory</em> zeggen</div>
     </div>
     <div class="testimonials-grid">
       {
@@ -58,11 +58,13 @@ const { testimonials } = Astro.props;
   }
 
   .testimonial-card {
-    background: var(--beige);
-    border: 1px solid rgba(136, 101, 69, 0.06);
+    background: var(--white);
+    border: 1px solid rgba(136, 101, 69, 0.28);
     border-radius: 16px;
     padding: 2rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .testimonial-card::before {
@@ -83,6 +85,7 @@ const { testimonials } = Astro.props;
     font-style: normal;
     margin-bottom: 1.5rem;
     padding-top: 1rem;
+    flex: 1;
   }
 
   .testimonial-author {

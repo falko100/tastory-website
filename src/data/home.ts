@@ -1,46 +1,84 @@
 export const stats = [
   { number: '58%', label: "van de gasten het eten fotografeert, maar de foto's niet delen of gebruiken" },
   { number: '69%', label: 'kiest op basis van reviews van anderen' },
-  { number: '75%', label: 'het restaurant kiest op basis van foto\'s' },
-  { number: '80%', label: "restaurants bezoekt door 'in de buurt' te zoeken" },
+  { number: '75%', label: 'het restaurant kiest op basis van content' },
 ];
 
 export const features = [
   {
-    icon: 'video',
-    title: 'Videocontent',
+    icon: 'repeat',
+    title: 'Terugkerende gasten',
     description:
-      "Geen statische foto's meer. Restaurants presenteren zich via sfeervolle, kwalitatieve video's die de beleving écht overbrengen aan potentiële gasten.",
+      'Gasten komen niet alleen langs, ze komen ook terug. Wij zorgen voor betere keuzes door gasten.',
   },
   {
     icon: 'target',
-    title: 'Gericht op klanten',
+    title: 'Representatieve profielen',
     description:
-      'Via onze app vinden gasten het beste restaurant op het juiste moment. Met een sterke en representatieve presentatie laten restaurants zien waar ze voor staan.',
+      'Bij ons is elk restaurantprofiel representatief. Actueel, eerlijk en authentiek. Alleen zo krijgen gasten een ervaring die aansluit bij hun verwachting.',
+  },
+  {
+    icon: 'video',
+    title: 'Content',
+    description:
+      'Een representatief profiel zorgt voor een versterkt imago en betere zichtbaarheid voor restaurants. Wij zorgen voor sfeervolle, hoogwaardige en actuele content die de beleving écht overbrengt. Geen verouderde content meer, maar een beeld dat klopt.',
+  },
+  {
+    icon: 'tag',
+    title: 'Restaurantverhaal',
+    description:
+      'Om de beleving écht over te brengen is het restaurantverhaal essentieel. Het verhaal van een restaurant verdient een podium. En dit podium, dat geven wij.',
   },
   {
     icon: 'gem',
     title: 'Kwaliteit door openheid',
     description:
-      'Profielen die aansluiten bij de realiteit, het verhaal van het restaurant vertellen en ook kwetsbaarheid tonen. Wij geloven dat het verhaal ten grondslag ligt aan succes.',
-  },
-  {
-    icon: 'repeat',
-    title: 'Terugkerende gasten',
-    description:
-      'Gasten komen niet alleen langs, maar ze komen ook terug. Tastory helpt restaurants met zichtbaarheid, imago en het vergroten van een loyale gastenkring.',
+      'Om het restaurantverhaal over te brengen kiezen wij voor oprecht boven perfect. Gewogen reviews en eerlijke content. Want als het leeft en bruist, zie je speelse verschillen en proef je passie.',
   },
   {
     icon: 'share',
     title: 'Delen & ontdekken',
     description:
-      'Deel ervaringen met vrienden en inspireer anderen om de restaurants te bezoeken waar jij zelf zo van genoten hebt. Sociaal, smaakvol en persoonlijk.',
+      'Openheid is verworven door de hele app, niet alleen op de restaurantprofielen. Onze sociale feed maakt het mogelijk om te laten zien bij welke restaurants gasten hebben genoten. Sociaal, smaakvol en persoonlijk anderen inspireren.',
+  },
+];
+
+export const appFunctions = [
+  {
+    icon: 'search',
+    title: 'Betrouwbare reviews die ertoe doen',
+    description:
+      'Elke review op Tastory wordt gevalideerd. Geen beoordelingen waar je vraagtekens bij kunt zetten alleen eerlijke ervaringen van echte gasten die je kunt vertrouwen.',
   },
   {
-    icon: 'tag',
-    title: 'Doelgroep',
+    icon: 'film',
+    title: "Foto's en video's als eerste indruk",
     description:
-      'Gun jouw verhaal een podium. Jouw doelgroep is al gast.',
+      "Restaurants presenteren zichzelf via beelden die de beleving écht overbrengen. Geen misleidende stockfoto's, maar authentieke content die laat zien waar een restaurant voor staat.",
+  },
+  {
+    icon: 'map',
+    title: 'Eerlijk ontdekken, zonder betaalde posities',
+    description:
+      'Bij Tastory koop je je plek niet. Restaurants worden zichtbaar op basis van kwaliteit en beleving zodat jij altijd het beste vindt.',
+  },
+  {
+    icon: 'star',
+    title: 'Jouw persoonlijke smaakprofiel',
+    description:
+      'Bewaar restaurants die bij jóu passen. Geen eindeloze lijsten van anderen, maar jouw eigen culinaire wereld gebouwd op wat jij écht lekker vindt.',
+  },
+  {
+    icon: 'map',
+    title: 'Persoonlijke foodmap',
+    description:
+      'Maak je eigen foodmap met alle bezochte restaurants en deel deze met vrienden.',
+  },
+  {
+    icon: 'user',
+    title: 'Spaar punten voor jouw favoriete restaurant',
+    description:
+      'Spaar punten voor jouw favoriete restaurant. Lever ze in voor leuke beloningen.',
   },
 ];
 
